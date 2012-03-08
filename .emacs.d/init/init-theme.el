@@ -43,19 +43,18 @@
 
        ;; markdown
        (markdown-list-face ((t (:italic f :foreground "#a96da0"))))
-
 )))
 
 ;; enable the theme
 (my-color-theme)
 
+;; fringe & line numbers
+(set-fringe-style "left-only")
 (custom-set-faces
  '(fringe ((t (:background "#000D1D"))))
- '(linum ((t (:foreground "#223344" :background "#000D1D"))))
-)
-
-;; fringe
-(set-fringe-style "left-only")
+ '(linum ((t (:foreground "#223344" :background "#000D1D")))))
+(custom-set-variables
+ '(global-linum-mode t))
 
 ;; frame opacity
 (add-to-list 'default-frame-alist '(alpha . (95 70)))
@@ -63,4 +62,13 @@
 ;; no scroll bars
 (scroll-bar-mode nil)
 
+;; misc
+(custom-set-variables
+ '(cursor-type (quote box))
+ '(default-frame-alist (quote ((cursor-color . "Purple"))))
+ '(x-stretch-cursor t)
+ '(global-hl-line-mode t)
+ '(visual-line-mode nil t))
+
 (provide 'init-theme)
+
