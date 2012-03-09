@@ -15,8 +15,10 @@
 ;; utils
 ;;;;;;;;;;;;;;;;
 
+(require 'init-aquamacs)
 (require 'init-editing)
 (require 'init-edit-lines)
+(require 'init-keys)
 (require 'init-nav-buffer)
 (require 'init-nav-fs)
 (require 'init-region)
