@@ -19,10 +19,11 @@
 (require 'init-edit-lines)
 (require 'init-nav-buffer)
 (require 'init-nav-fs)
-(require 'init-search)
 (require 'init-region)
+(require 'init-search)
 (require 'init-theme)
 (require 'init-whitespace)
+(require 'init-windows)
 
 ;;;;;;;;;;;;;;;;
 ;; modes
