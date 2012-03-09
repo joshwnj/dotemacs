@@ -65,7 +65,7 @@
 ;; misc
 (custom-set-variables
  '(cursor-type (quote box))
- '(default-frame-alist (quote ((cursor-color . "Purple"))))
+ '(default-frame-alist (quote ((alpha 95 70) (fringe) (right-fringe) (left-fringe . 1) (cursor-color . "Purple") (menu-bar-lines . 1) (foreground-color . "#DBDBDB") (background-color . "#001525") (background-mode . dark) (vertical-scroll-bars . nil))))
  '(x-stretch-cursor t)
  '(global-hl-line-mode t)
  '(visual-line-mode nil t))
