@@ -1,0 +1,6 @@
+#name : Inline script tag
+# key: js.inline
+# --
+<script>
+$0
+</script>

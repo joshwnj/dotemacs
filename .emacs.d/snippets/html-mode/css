@@ -1,0 +1,4 @@
+#name : CSS include
+# key: css
+# --
+<link href="$0" rel="stylesheet" type="text/css" />

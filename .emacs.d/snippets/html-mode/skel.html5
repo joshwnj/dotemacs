@@ -1,0 +1,11 @@
+#name : HTML5 page skeleton
+# key: skel.html5
+# --
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>$0</title>
+  </head>
+  <body>
+  </body>
+</html>

@@ -21,6 +21,7 @@
 (require 'init-nav-fs)
 (require 'init-region)
 (require 'init-search)
+(require 'init-snippets)
 (require 'init-theme)
 (require 'init-whitespace)
 (require 'init-windows)
