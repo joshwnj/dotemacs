@@ -3,6 +3,9 @@
 ;; appearance
 ;;;;;;;;;;;;;;;;
 
+;; monaco all the way down
+(aquamacs-autoface-mode 0)
+
 (require 'color-theme)
 (defun my-color-theme ()
   "custom color theme"
