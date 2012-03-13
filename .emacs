@@ -24,6 +24,7 @@
 (require 'init-region)
 (require 'init-search)
 (require 'init-snippets)
+(require 'init-svn)
 (require 'init-theme)
 (require 'init-whitespace)
 (require 'init-windows)
@@ -33,8 +34,10 @@
 ;;;;;;;;;;;;;;;;
 
 (require 'mode-conf)
+(require 'mode-elisp)
 (require 'mode-markdown)
 (require 'mode-js)
 (require 'mode-json)
 (require 'mode-php)
 (require 'mode-html)
+(require 'mode-shell)
