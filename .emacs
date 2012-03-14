@@ -6,18 +6,13 @@
 (add-to-list 'load-path "~/.emacs.d/modes")
 
 ;;;;;;;;;;;;;;;;
-;; dependencies
-;;;;;;;;;;;;;;;;
-
-(require 'flymake)
-
-;;;;;;;;;;;;;;;;
 ;; utils
 ;;;;;;;;;;;;;;;;
 
 (require 'init-aquamacs)
 (require 'init-editing)
 (require 'init-edit-lines)
+(require 'init-flymake)
 (require 'init-keys)
 (require 'init-nav-buffer)
 (require 'init-nav-fs)
