@@ -21,6 +21,7 @@
 (require 'init-modeline)
 (require 'init-nav-buffer)
 (require 'init-nav-fs)
+(require 'init-nonedit)
 (require 'init-region)
 (require 'init-search)
 (require 'init-snippets)
