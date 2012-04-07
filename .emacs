@@ -14,6 +14,7 @@
 (require 'init-edit-lines)
 (require 'init-flymake)
 (require 'init-keys)
+(require 'init-modeline)
 (require 'init-nav-buffer)
 (require 'init-nav-fs)
 (require 'init-region)
