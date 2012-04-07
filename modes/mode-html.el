@@ -11,7 +11,11 @@
 ;; disable the magic list (so we don't get html-helper-mode)
 (setq magic-mode-alist ())
 
+;;;;
 ;; indenting
+
+(setq sgml-basic-offset 4)
+
 (defun indent-region-as (other-mode)
   "Indent selected region as some other mode.  Used in order to indent source code contained within HTML."
   (interactive "aMode to use: ")

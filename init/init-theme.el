@@ -6,6 +6,7 @@
 ;; monaco all the way down
 (aquamacs-autoface-mode 0)
 
+(add-to-list 'load-path "~/.emacs.d/plugins/color-theme")
 (require 'color-theme)
 (defun my-color-theme ()
   "custom color theme"

@@ -7,7 +7,10 @@
 ;; colors for occur-mode
 (require 'color-occur)
 
-(global-set-key (kbd "M-A-f") 'grep-find)
+(global-set-key (kbd "M-f") 'search-forward-regexp)
+(global-set-key (kbd "M-F") 'search-backward-regexp)
+(global-set-key (kbd "M-A-f") 'occur)
+(global-set-key (kbd "M-A-g") 'grep-find)
 (global-set-key (kbd "M-A-,") 'previous-error)
 (global-set-key (kbd "M-A-.") 'next-error)
 
