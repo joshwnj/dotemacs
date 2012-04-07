@@ -1,6 +1,8 @@
 ;;;;
 ;; Auto-Discover .el files
 
+(add-to-list 'load-path "/usr/local/share/emacs/site-lisp")
+
 (add-to-list 'load-path "~/.emacs.d/plugins")
 (add-to-list 'load-path "~/.emacs.d/init")
 (add-to-list 'load-path "~/.emacs.d/modes")
@@ -8,6 +10,8 @@
 ;;;;;;;;;;;;;;;;
 ;; utils
 ;;;;;;;;;;;;;;;;
+
+(require 'init-theme)
 
 (require 'init-aquamacs)
 (require 'init-editing)
@@ -21,7 +25,6 @@
 (require 'init-search)
 (require 'init-snippets)
 (require 'init-svn)
-(require 'init-theme)
 (require 'init-whitespace)
 (require 'init-windows)
 
