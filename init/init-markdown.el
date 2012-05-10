@@ -10,4 +10,4 @@
 (setq auto-mode-alist
    (cons '("README" . markdown-mode) auto-mode-alist))
 
-(provide 'mode-markdown)
+(provide 'init-markdown)

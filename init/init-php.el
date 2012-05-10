@@ -1,9 +1,3 @@
-;;;;
-;; php
-
-;; tokens
-(require 'php-tokens)
-
 ;; indenting
 (add-hook 'php-mode-hook '(lambda () 
   (c-set-style "K&R") 
@@ -52,4 +46,4 @@
 
 (add-hook 'php-mode-hook (lambda () (flymake-mode 1)))
 
-(provide 'mode-php)
+(provide 'init-php)

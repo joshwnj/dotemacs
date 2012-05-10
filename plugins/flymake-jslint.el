@@ -13,7 +13,7 @@
       (list "jslint" (list local-file))))
 
   (setq flymake-err-line-patterns 
-	(cons '("^  [[:digit:]]+ \\([[:digit:]]+\\),\\([[:digit:]]+\\): \\(.+\\)$"  
+	(cons '("\(\\([[:digit:]]+\\)\)\\(:\\)\\(.*\\)$"
 		nil 1 2 3)
 	      flymake-err-line-patterns))
   

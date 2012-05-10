@@ -6,4 +6,6 @@
 (require 'dropdown-list)
 (setq yas/prompt-functions '(yas/dropdown-prompt))
 
+(setq yas/trigger-key (kbd "M-\\"))
+
 (provide 'init-snippets)

@@ -7,7 +7,7 @@
 ;; npm install -g jslint
 
 (require 'flymake-jslint)
-(add-hook 'javascript-mode-hook
+(add-hook 'js-mode-hook
 	  (lambda () (flymake-mode t)))
 
-(provide 'mode-js)
+(provide 'init-js)

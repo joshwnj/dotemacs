@@ -1,27 +1,36 @@
-# To do
+# Emacs config
+
+## Using with Aquamacs
+
+This setup should be compatible with both terminal emacs (I'm using iTerm2) and Aquamacs.  To activate the aquamacs-only config, append this to your `~/Library/Preferences/Aquamacs\ Emacs/Preferences.el` file:
+
+    (load "~/emacs_config/init-aquamacs.el")
+
+## To Do
+
+ * selective use of ido-mode, so it doesn't get in the way (eg. when you want to create a new file).
+ 
+ * json mode
+  * flymake
+  * beautifier
+  
+ * svn
+  * view status of a directory, and quick diffing
+  
+ * tailing a log file
+  * font lock to highlight a timestamp
+  * filtering / highlighting
 
  * predefined window configurations
-
- * better contrast on the modeline to distinguish the active window
 
  * html-mode: search by css-selector
   * could maybe do this with the php-tokens.el plugin, and a phpquery script
 
- * js-mode: port across the php-tokens.el plugin
-
- * make a selection and then do something with it
-  * search for other instances of the selection
-  * comment/uncomment
-  * indent/outdent
-  * func: store the current selection
-
  * bookmarks
   * maybe just use the mark ring?
 
- * fix whitespace mode colours
+ * more pleasant whitespace mode colours
 
- * bind caps-lock to ctrl
-
- * when in fullscreen with only a single window, increase the left/right padding
-
+ * php mode
+  * look into sgrep <https://github.com/facebook/pfff/wiki/Sgrep>
 

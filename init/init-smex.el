@@ -1,9 +1,3 @@
-;;;;
-;; misc global keybindings
-
-;; alias C-g
-(global-set-key (kbd "<A-backspace>") 'minibuffer-keyboard-quit)
-
 ;; initialize smex
 (require 'smex)
 (global-set-key [(meta x)] (lambda ()
@@ -22,4 +16,4 @@
 
 (global-set-key (kbd "A-<return>") 'smex)
 
-(provide 'init-keys)
+(provide 'init-smex)

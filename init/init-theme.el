@@ -1,10 +1,7 @@
 
 ;;;;;;;;;;;;;;;;
-;; appearance
+;; theme
 ;;;;;;;;;;;;;;;;
-
-;; monaco all the way down
-(aquamacs-autoface-mode 0)
 
 (add-to-list 'load-path "~/.emacs.d/plugins/color-theme")
 (require 'color-theme)
@@ -42,37 +39,12 @@
        (show-paren-match-face ((t (:bold t :foreground "#FF00FF" 
                                     :background "#330033"))))
 
-       ;; js2
-       (js2-function-param-face ((t (:foreground "#75CF4E"))))
-
        ;; markdown
-       (markdown-list-face ((t (:italic f :foreground "#a96da0"))))
+       (markdown-list-face ((t (:foreground "#a96da0"))))
 )))
 
 ;; enable the theme
 (my-color-theme)
-
-;; fringe & line numbers
-(set-fringe-style "left-only")
-(custom-set-faces
- '(fringe ((t (:background "#000D1D"))))
- '(linum ((t (:foreground "#223344" :background "#000D1D")))))
-(custom-set-variables
- '(global-linum-mode t))
-
-;; frame opacity
-(add-to-list 'default-frame-alist '(alpha . (95 70)))
-
-;; no scroll bars
-(scroll-bar-mode nil)
-
-;; misc
-(custom-set-variables
- '(cursor-type (quote box))
- '(default-frame-alist (quote ((alpha 95 70) (fringe) (right-fringe) (left-fringe . 1) (cursor-color . "Purple") (menu-bar-lines . 1) (foreground-color . "#DBDBDB") (background-color . "#001525") (background-mode . dark) (vertical-scroll-bars . nil))))
- '(x-stretch-cursor t)
- '(global-hl-line-mode t)
- '(visual-line-mode nil t))
 
 (provide 'init-theme)
 
