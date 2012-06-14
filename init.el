@@ -23,6 +23,8 @@
 (require 'init-autocomplete)
 (require 'init-editing)
 (require 'init-flymake)
+(require 'init-flyspell)
+(require 'init-modes)
 (require 'init-snippets)
 
 ;; major modes
