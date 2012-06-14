@@ -1,18 +1,29 @@
 # Emacs config
 
-## Using with Aquamacs
+Optimized for emacs 24 in iTerm2.
 
-This setup should be compatible with both terminal emacs (I'm using iTerm2) and Aquamacs.  To activate the aquamacs-only config, append this to your `~/Library/Preferences/Aquamacs\ Emacs/Preferences.el` file:
+I was previously using Aquamacs as well, and it should be mostly compatible.  See **Using with Aquamacs** below for more info.
 
-    (load "~/emacs_config/init-aquamacs.el")
+## Wish List
 
-## To Do
+ * on startup, show me:
+  * buffer list
+  * recent files
 
- * selective use of ido-mode, so it doesn't get in the way (eg. when you want to create a new file).
+ * learn keys for scrolling the buffer without moving the point.
+
+ * diff of changes since last save
+  * highlight additions in green
+  * keyboard shortcuts to move to next/prev change
+  * allow reverting specific changes
  
  * json mode
   * flymake
   * beautifier
+
+* php mode
+  * fix indentation rules (sometimes buggy with arrays)
+  * look into sgrep <https://github.com/facebook/pfff/wiki/Sgrep>
   
  * svn
   * view status of a directory, and quick diffing
@@ -29,8 +40,10 @@ This setup should be compatible with both terminal emacs (I'm using iTerm2) and 
  * bookmarks
   * maybe just use the mark ring?
 
- * more pleasant whitespace mode colours
 
- * php mode
-  * look into sgrep <https://github.com/facebook/pfff/wiki/Sgrep>
+## Using with Aquamacs
+
+This setup should be compatible with both terminal emacs (I'm using iTerm2) and Aquamacs.  To activate the aquamacs-only config, append this to your `~/Library/Preferences/Aquamacs\ Emacs/Preferences.el` file:
+
+    (load "~/emacs_config/init-aquamacs.el")
 
