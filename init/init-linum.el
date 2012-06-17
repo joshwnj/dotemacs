@@ -1,6 +1,5 @@
 ;; turn line numbers off by default
 (global-linum-mode -1)
-(setq linum-format " %d ")
 
 (defun goto-line-with-feedback (&optional line)
   "Show line numbers temporarily, while prompting for the line number input"

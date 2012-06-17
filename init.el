@@ -50,6 +50,7 @@
 ;; navigating
 ;;;;;;;;;;;;;;;;
 
+(require 'init-linum)
 (require 'init-nav)
 (require 'init-search)
 
