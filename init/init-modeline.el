@@ -9,6 +9,9 @@
                       (if (>= (current-column) 80)
                           'mode-line-80col-face
                         'mode-line-position-face)))
+
+   (:propertize " %p " face font-lock-constant-face) ;; % above top
+
    ; emacsclient [default -- keep?]
    mode-line-client
    "  "
