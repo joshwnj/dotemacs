@@ -7,15 +7,20 @@
 
 ;;;;
 ;; Use "%" to jump to the matching parenthesis.
+;; source: http://emacswiki.org/emacs/ParenthesisMatching
 
 (defun goto-match-paren (arg)
-  "Go to the matching parenthesis if on parenthesis, otherwise insert
-the character typed."
+  "Go to the matching  if on (){}[], similar to vi style of % "
   (interactive "p")
-  (cond ((looking-at "\\s\(") (forward-list 1) (backward-char 1))
-    ((looking-at "\\s\)") (forward-char 1) (backward-list 1))
-    (t                    (self-insert-command (or arg 1))) ))
-(global-set-key (kbd "%") `goto-match-paren)
+  ;; first, check for "outside of bracket" positions expected by forward-sexp, etc.
+  (cond ((looking-at "[\[\(\{]") (forward-sexp))
+        ((looking-back "[\]\)\}]" 1) (backward-sexp))
+        ;; now, try to succeed from inside of a bracket
+        ((looking-at "[\]\)\}]") (forward-char) (backward-sexp))
+        ((looking-back "[\[\(\{]" 1) (backward-char) (forward-sexp))
+        (t (self-insert-command (or arg 1)))))
+
+(global-set-key (kbd "%") 'goto-match-paren)
 
 ;;;;
 ;; Pop to mark
