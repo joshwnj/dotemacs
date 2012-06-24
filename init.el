@@ -21,6 +21,7 @@
 ;;;;;;;;;;;;;;;;
 
 (require 'init-autocomplete)
+(require 'init-backups)
 (require 'init-editing)
 (require 'init-flymake)
 (require 'init-flyspell)
