@@ -67,8 +67,11 @@
 (require 'init-term)
 
 ;;;;;;;;;;;;;;;;
-;; commands
+;; misc
 ;;;;;;;;;;;;;;;;
 
+(require 'init-jabber)
+(require 'init-osx)
+(require 'init-packages)
 (require 'init-smex)
 (require 'init-osx)
