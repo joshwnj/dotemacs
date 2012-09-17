@@ -20,7 +20,12 @@
       (process-send-eof proc))))
 
 (global-set-key (kbd "C-c c") 'osx-pbcopy)
+(global-set-key (kbd "C-c C-c") 'osx-pbcopy)
+
 (global-set-key (kbd "C-c v") 'osx-pbpaste)
+(global-set-key (kbd "C-c C-v") 'osx-pbpaste)
+
 (global-set-key (kbd "C-c d") 'osx-get-cwd)
+(global-set-key (kbd "C-c C-d") 'osx-get-cwd)
 
 (provide 'init-osx)

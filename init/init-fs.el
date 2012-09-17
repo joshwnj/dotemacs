@@ -26,10 +26,16 @@
 (setq dired-listing-switches "-Gahl")
 
 ;;;;
+;; find file at point
+
+(global-set-key (kbd "C-c p") 'find-file-at-point)
+
+;;;;
 ;; buffers
 
 (global-set-key (kbd "C-c [") 'previous-buffer)
 (global-set-key (kbd "C-c ]") 'next-buffer)
+(global-set-key (kbd "C-x C-b") 'ido-switch-buffer)
 
 ;;;;
 ;; ibuffer
