@@ -14,7 +14,10 @@
 
 (require 'init-appearance)
 (require 'init-modeline)
-(require 'init-whitespace)
+
+(require 'sml-modeline)
+(sml-modeline-mode 1)
+
 
 ;;;;;;;;;;;;;;;;
 ;; editing
@@ -29,6 +32,7 @@
 (require 'init-snippets)
 
 ;; major modes
+(require 'init-css)
 (require 'init-html)
 (require 'init-php)
 (require 'init-js)
@@ -71,6 +75,7 @@
 ;; misc
 ;;;;;;;;;;;;;;;;
 
+(require 'init-erc)
 (require 'init-jabber)
 (require 'init-osx)
 (require 'init-packages)
