@@ -11,6 +11,9 @@
 ;; disable the magic list (so we don't get html-helper-mode)
 (setq magic-mode-alist ())
 
+;; zencoding
+(add-hook 'html-mode-hook 'zencoding-mode)
+
 ;;;;
 ;; indenting
 
