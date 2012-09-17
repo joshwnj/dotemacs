@@ -1,32 +1,16 @@
+(add-to-list 'load-path "~/emacs_config/plugins/php-mode")
+(require 'php-mode)
+
+(add-hook 'php-mode-hook
+          '(lambda () (define-abbrev php-mode-abbrev-table "ex" "extends")))
+
 ;; indenting
 (add-hook 'php-mode-hook '(lambda () 
-  (c-set-style "K&R") 
+  (c-set-style "cc-mode") 
   (setq c-basic-offset 4)
-  (setq indent-line-function 'custom-indent-line)
-
-  ;; disable electric indent
-  (c-toggle-electric-state -1)
 ))
 
-(global-set-key "\r" 'newline-and-indent)
-
-(defun custom-indent-line ()
-  "Custom indent function for `php-mode'."
-  (interactive)
-  (let ((indent-col 0))
-    (save-excursion
-      (beginning-of-line)
-      (condition-case nil
-          (while t
-            (backward-up-list 1)
-            (when (looking-at "[[{(]")
-              (setq indent-col (+ indent-col c-basic-offset))))
-        (error nil)))
-    (save-excursion
-      (back-to-indentation)
-      (when (and (looking-at "[]})]") (>= indent-col c-basic-offset))
-        (setq indent-col (- indent-col c-basic-offset))))
-    (indent-line-to indent-col)))
+(setq php-manual-path "/usr/share/doc/php/html")
 
 ;; flymake 
 (defun flymake-php-init ()
@@ -43,6 +27,9 @@
 ;; extra extensions
 (add-to-list 'flymake-allowed-file-name-masks '("\\.inc$" flymake-php-init))
 (add-to-list 'flymake-allowed-file-name-masks '("\\.class$" flymake-php-init))
+
+;; prevent collision
+(define-key php-mode-map (kbd "C-c .") 'flymake-goto-next-error)
 
 (add-hook 'php-mode-hook (lambda () (flymake-mode 1)))
 
