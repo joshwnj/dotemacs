@@ -1,0 +1,4 @@
+#name:Tag
+# key:<
+# --
+<${1:div}>$0</${1:$(elt (split-string text) 0)}>

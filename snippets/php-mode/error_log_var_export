@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: error_log_var_export
+# key: ev
+# --
+error_log(var_export($1, true));
