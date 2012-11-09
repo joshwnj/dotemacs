@@ -2,12 +2,15 @@
 
 Optimized for emacs 24 in iTerm2.
 
-I was previously using Aquamacs as well, and it should be mostly compatible.  See **Using with Aquamacs** below for more info.
-
 ## Wish List
 
- * when doing an i-search
-  * RET moves point to end of match, M-RET moves point to start of match
+ * fast navigation for markdown mode: jump to heading
+
+ * navigate by parens
+  * based on expand-region
+  * step into block
+  * step over block
+  * forward/backward word
 
  * NPM package.json mode
   * create from skeleton
@@ -24,12 +27,6 @@ I was previously using Aquamacs as well, and it should be mostly compatible.  Se
  * jump to column
  
  * fill region with character
-
- * quick browsing around:
-  * step into block
-  * step over block
-  * forward/backward word
-  
 
  * whenever the line changes by more than 1 line, activate hl-line for a couple of seconds
 
@@ -68,10 +65,4 @@ I was previously using Aquamacs as well, and it should be mostly compatible.  Se
 
  * html-mode: search by css-selector
   * could maybe do this with the php-tokens.el plugin, and a phpquery script
-
-## Using with Aquamacs
-
-This setup should be compatible with both terminal emacs (I'm using iTerm2) and Aquamacs.  To activate the aquamacs-only config, append this to your `~/Library/Preferences/Aquamacs\ Emacs/Preferences.el` file:
-
-    (load "~/emacs_config/init-aquamacs.el")
 
