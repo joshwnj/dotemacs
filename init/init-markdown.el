@@ -1,13 +1,6 @@
 ;;;;
-;; markdown
+;; triggers
 
-(autoload 'markdown-mode "markdown-mode.el"
-   "Major mode for editing Markdown files" t)
-(setq auto-mode-alist
-   (cons '("\\.txt" . markdown-mode) auto-mode-alist))
-(setq auto-mode-alist
-   (cons '("\\.md" . markdown-mode) auto-mode-alist))
-(setq auto-mode-alist
-   (cons '("README" . markdown-mode) auto-mode-alist))
+(add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
 
 (provide 'init-markdown)

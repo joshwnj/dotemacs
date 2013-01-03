@@ -1,5 +1,6 @@
 ;; turn line numbers off by default
 (global-linum-mode -1)
+(setq linum-format " %d  ")
 
 ;;;;
 ;; thanks to @magnars for help here

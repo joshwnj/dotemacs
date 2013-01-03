@@ -1,83 +1,55 @@
-;;;;;;;;;;;;;;;;;;;;;;;;
-;; general emacs config
-;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;
+;; Auto-Discover .el files 
 
-(setq inhibit-startup-message t)
-(fset 'yes-or-no-p 'y-or-n-p)
-
-(add-to-list 'load-path "~/.emacs.d/plugins")
 (add-to-list 'load-path "~/.emacs.d/init")
+(add-to-list 'load-path "~/.emacs.d/plugins")
 
-;;;;;;;;;;;;;;;;
-;; appearance
-;;;;;;;;;;;;;;;;
+(require 'package)
+(add-to-list 'package-archives 
+	     '("marmalade" .
+	       "http://marmalade-repo.org/packages/"))
+(package-initialize)
 
-(require 'init-appearance)
-(require 'init-modeline)
+;;;;
 
-(require 'sml-modeline)
-(sml-modeline-mode 1)
+(require 'json-mode)
+(require 'flymake-cursor)
+(require 'flymake)
 
+;;;;
+;; Init
 
-;;;;;;;;;;;;;;;;
-;; editing
-;;;;;;;;;;;;;;;;
-
-(require 'init-autocomplete)
 (require 'init-backups)
-(require 'init-editing)
-(require 'init-flymake)
-(require 'init-flyspell)
-(require 'init-modes)
-(require 'init-snippets)
-
-;; major modes
-(require 'init-css)
-(require 'init-html)
-(require 'init-php)
-(require 'init-js)
-(require 'init-json)
-(require 'init-markdown)
-
-;;;;;;;;;;;;;;;;
-;; windows
-;;;;;;;;;;;;;;;;
-
+(require 'init-defaults)
+(require 'init-fs)
+(require 'init-linum)
+(require 'init-modeline)
+(require 'init-osx)
+(require 'init-region)
+(require 'init-smex)
 (require 'init-windows)
 
-;;;;;;;;;;;;;;;;
-;; regions
-;;;;;;;;;;;;;;;;
+;;;;
+;; Major modes
 
-(require 'init-region)
+(require 'init-html)
+(require 'init-markdown)
+(require 'init-php)
 
-;;;;;;;;;;;;;;;;
-;; navigating
-;;;;;;;;;;;;;;;;
+;;;;
 
-(require 'init-linum)
-(require 'init-nav)
-(require 'init-search)
-
-;;;;;;;;;;;;;;;;
-;; filesystem
-;;;;;;;;;;;;;;;;
-
-(require 'init-fs)
-
-;;;;;;;;;;;;;;;;
-;; terminals
-;;;;;;;;;;;;;;;;
-
-(require 'init-term)
-
-;;;;;;;;;;;;;;;;
-;; misc
-;;;;;;;;;;;;;;;;
-
-(require 'init-erc)
-(require 'init-jabber)
-(require 'init-osx)
-(require 'init-packages)
-(require 'init-smex)
-(require 'init-osx)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(auto-save-file-name-transforms (quote ((".*" "~/.emacs_autosaves/\\1" t))))
+ '(backup-directory-alist (quote ((".*" . "~/.emacs_backups/")))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(hl-line ((t (:background "black"))))
+ '(mode-line ((t (:background "black"))))
+ '(region ((t (:inverse-video t)))))

@@ -1,18 +1,26 @@
-(add-to-list 'load-path "~/emacs_config/plugins/php-mode")
-(require 'php-mode)
+;;;;
+;; triggers
 
-(add-hook 'php-mode-hook
-          '(lambda () (define-abbrev php-mode-abbrev-table "ex" "extends")))
+(add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
 
-;; indenting
-(add-hook 'php-mode-hook '(lambda () 
-  (c-set-style "cc-mode") 
-  (setq c-basic-offset 4)
-))
+;;;;
+;; indentation
 
-(setq php-manual-path "/usr/share/doc/php/html")
+(add-hook 'php-mode-hook (lambda ()
+			   (defun ywb-php-lineup-arglist-intro (langelem)
+			     (save-excursion
+			       (goto-char (cdr langelem))
+			       (vector (+ (current-column) c-basic-offset))))
+			   (defun ywb-php-lineup-arglist-close (langelem)
+			     (save-excursion
+			       (goto-char (cdr langelem))
+			       (vector (current-column))))
+			   (c-set-offset 'arglist-intro 'ywb-php-lineup-arglist-intro)
+			   (c-set-offset 'arglist-close 'ywb-php-lineup-arglist-close)))
 
+;;;;
 ;; flymake 
+
 (defun flymake-php-init ()
   "Use php to check the syntax of the current file."
   (let* ((temp (flymake-init-create-temp-buffer-copy 'flymake-create-temp-inplace))
@@ -28,9 +36,13 @@
 (add-to-list 'flymake-allowed-file-name-masks '("\\.inc$" flymake-php-init))
 (add-to-list 'flymake-allowed-file-name-masks '("\\.class$" flymake-php-init))
 
-;; prevent collision
-(define-key php-mode-map (kbd "C-c .") 'flymake-goto-next-error)
+;; auto-start flymake
+(add-hook 'php-mode-hook 
+	  (lambda ()
+	    (define-key php-mode-map (kbd "C-c .") 'flymake-goto-next-error)
+	    (flymake-mode 1)))
 
-(add-hook 'php-mode-hook (lambda () (flymake-mode 1)))
+;; auto-start eldoc mode
+(add-hook 'php-mode-hook 'turn-on-eldoc-mode)
 
 (provide 'init-php)

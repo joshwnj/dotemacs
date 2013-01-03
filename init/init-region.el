@@ -1,49 +1,4 @@
 ;; ----
-;; expand-region
-
-(add-to-list 'load-path "~/.emacs.d/plugins/expand-region")
-(require 'expand-region)
-
-(global-set-key (kbd "M-_") 'er/contract-region)
-(global-set-key (kbd "M-+") 'er/expand-region)
-
-;; ----
-;; wrap-region
-
-(add-to-list 'load-path "~/.emacs.d/plugins/wrap-region")
-(require 'wrap-region)
-(wrap-region-global-mode 1)
-
-;; ----
-;; movement with memory
-
-(defvar memove/line-amount 1
-  "How many lines to move at a time.")
-
-(defun memove/next-line (&optional amount)
-  (interactive "P")
-  (when amount
-    ;; remember this for next time
-    (setq memove/line-amount amount))
-  (forward-line memove/line-amount))
-
-(defun memove/previous-line (&optional amount)
-  (interactive "P")
-  (when amount
-    ;; remember this for next time
-    (setq memove/line-amount amount))
-  (forward-line (* -1 memove/line-amount)))
-
-;; ----
-;; replace active region with a yank
-
-(defun replace-region (start end)
-  "Replace region with a yank."
-  (interactive "r")
-  (delete-region start end)
-  (yank))
-
-;; ----
 ;; region shortcut keys
 
 (defvar region-shortcut-mode-map
@@ -64,21 +19,59 @@
     (define-key map (kbd "w") 'whitespace-cleanup-region)
     (define-key map (kbd "\\") 'indent-rigidly)
 
+    ;; search/replace
+    (define-key map (kbd "/ /") 'replace-string)
+    (define-key map (kbd "/ .") 'replace-regexp)
+    (define-key map (kbd "?") 'query-replace)
+
+    ;; jump around
+    (define-key map (kbd "a") 'move-beginning-of-line)
+    (define-key map (kbd "e") 'move-end-of-line)
+    (define-key map (kbd "g") 'goto-line)
+
+    ;; expand-region
+    (define-key map (kbd "=") 'er/expand-region)
+    (define-key map (kbd "-") 'er/contract-region)
+
     ;; comments
     (define-key map (kbd ";") 'comment-or-uncomment-region)
 
     ;; region movement
     (define-key map (kbd "x") 'exchange-point-and-mark)
-    (define-key map (kbd "=") 'er/expand-region)
-    (define-key map (kbd "-") 'er/contract-region)
 
-    ;; browsing
-    (define-key map (kbd "j") 'memove/next-line)
-    (define-key map (kbd "k") 'memove/previous-line)
-
-    ;; toggle transient-mark-mode
-    (define-key map (kbd "`") 'transient-mark-mode)
+    ;; toggle region appearance
+    (define-key map (kbd "`") 'region-toggle-color)
 )
+
+(defvar region-is-highlighted t)
+(defun region-toggle-color (&optional disable-transient-mode)
+  "Toggle the region color"
+  (interactive "p")
+
+  (message "disable-transient-mode: %d" disable-transient-mode)
+  (if (= disable-transient-mode 2)
+      (transient-mark-mode -1)
+    (progn
+      (setq region-is-highlighted (if region-is-highlighted nil t))	    
+      (if region-is-highlighted
+	  (region-make-highlighted)
+	(region-make-unhighlighted)))
+    ))
+
+(defun region-make-highlighted ()
+  (interactive)
+  (transient-mark-mode 1)
+  (custom-set-faces
+   '(region ((t (:inverse-video t))))
+   ))
+
+(defun region-make-unhighlighted ()
+  (interactive)
+  (transient-mark-mode 1)
+  (custom-set-faces
+   '(region ((t (:inverse-video nil))))
+   '(region ((t (:background "black"))))
+   ))
 
 (defun region-shortcut-reload-keys ()
   (interactive)
@@ -98,7 +91,9 @@
   "Turn on Region-Shortcut mode."
   (unless (minibufferp)
     (progn
-      (hl-line-mode 1)
+      (custom-set-faces
+       '(mode-line ((t (:background "cyan"))))
+       )
       (region-shortcut-mode 1))))
 
 (defun region-shortcut-selective-toggle ()
@@ -109,8 +104,11 @@
 
 (defun region-shortcut-off ()
   "Turn off Region-Shortcut mode."
-  (hl-line-mode -1)
-  (region-shortcut-mode -1))
+  (progn
+    (custom-set-faces
+       '(mode-line ((t (:background "black"))))
+       )
+    (region-shortcut-mode -1)))
 
 ;; enable when we have an active mark
 (add-hook 'activate-mark-hook 'region-shortcut-on)
