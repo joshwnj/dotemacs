@@ -1,23 +1,21 @@
 ;;;;
+;; URL: https://github.com/joshwnj/dotemacs/
+
+;;;;
 ;; Auto-Discover .el files 
 
 (add-to-list 'load-path "~/.emacs.d/init")
-(add-to-list 'load-path "~/.emacs.d/plugins")
-
-(require 'package)
-(add-to-list 'package-archives 
-	     '("marmalade" .
-	       "http://marmalade-repo.org/packages/"))
-(package-initialize)
 
 ;;;;
+;; Packages
 
+(require 'init-packages)
 (require 'json-mode)
 (require 'flymake-cursor)
 (require 'flymake)
 
 ;;;;
-;; Init
+;; Misc settings
 
 (require 'init-backups)
 (require 'init-defaults)

@@ -1,35 +1,27 @@
+Dotemacs
+====
+
+My dotemacs files, optimised for 8-color display in iTerm2.
+
 Install
-====
-
- - major modes with file lists and snippets
- - yasnippet
-
-Commands
-====
-
- - switch major mode
- - windows
-  - expand the current window
-  - undo window change
-  - jump to window based on number
-
-Major Modes
-====
-
-js
 ----
 
- - flymake jslint
+First link the repo:
 
-php
-----
+```
+ln -s ~/PATH_TO_REPO ~/.emacs.d
+```
 
- - flymake php
- - flymake codesniffer
- - geben
+Install packages:
 
+```
+emacs -Q -l install-packages.el
+```
 
-html
-----
+[Optional] Some useful bash aliases:
 
- - zencoding
+```
+alias emacs='emacs -nw'
+alias ed='emacs --daemon'
+alias ee='emacsclient -t -a nano'
+```
