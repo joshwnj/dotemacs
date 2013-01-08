@@ -15,7 +15,7 @@ ln -s ~/PATH_TO_REPO ~/.emacs.d
 Install packages:
 
 ```
-emacs -Q -l install-packages.el
+emacs -Q -l ~/.emacs.d/install-packages.el
 ```
 
 [Optional] Some useful bash aliases:
