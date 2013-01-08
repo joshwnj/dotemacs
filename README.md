@@ -15,7 +15,7 @@ ln -s ~/PATH_TO_REPO ~/.emacs.d
 Install packages:
 
 ```
-emacs -Q -l ~/.emacs.d/install-packages.el
+emacs -Q -l ~/.emacs.d/install/packages.el
 ```
 
 [Optional] Some useful bash aliases:
@@ -75,4 +75,13 @@ for example in your `.bash_profile`:
 export SVN_EDITOR='emacsclient -t'
 export VISUAL='emacsclient -t'
 export EDITOR='emacsclient -t'
+```
+
+Install jslint
+----
+
+```
+npm install -g jslint
+cp ~/.emacs.d/install/jslint /usr/bin/jslint
+chmod +x /usr/bin/jslint
 ```
