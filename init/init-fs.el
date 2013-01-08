@@ -28,22 +28,29 @@
 ;;;;
 ;; dired
 
+(defun my-dired ()
+  "Open a dired in a split window"
+  (interactive)
+  (dired-other-window (file-name-directory (or load-file-name buffer-file-name))))
+
+(global-set-key (kbd "C-c C-d") 'my-dired)
+
+(add-hook 'dired-mode-hook
+          (lambda ()
+            (local-unset-key (kbd "f"))
+            (define-key dired-mode-map (kbd "f f") 'dired-find-file)
+            (define-key dired-mode-map (kbd "f g") 'grep-find)
+            (define-key dired-mode-map (kbd "f a") 'ftf-find-file)
+            ))
+
 (setq dired-listing-switches "-Gahl")
 (setq ls-lisp-use-insert-directory-program nil)
 (require 'ls-lisp)
-
 
 ;;;;
 ;; find file at point
 
 (global-set-key (kbd "C-c p") 'find-file-at-point)
-
-;;;;
-;; buffers
-
-(global-set-key (kbd "C-c [") 'previous-buffer)
-(global-set-key (kbd "C-c ]") 'next-buffer)
-(global-set-key (kbd "C-x C-b") 'ido-switch-buffer)
 
 ;;;;
 ;; ibuffer
@@ -56,6 +63,7 @@
              ;; keep the ibuffer up to date
              (ibuffer-auto-mode 1)))
 
+(global-set-key (kbd "C-c b") 'ibuffer)
 
 ;;;;
 ;; insert file name
