@@ -52,4 +52,6 @@
  '(flymake-errline ((t (:foreground "magenta" :underline t))))
  '(hl-line ((t (:background "black"))))
  '(mode-line ((t (:background "black"))))
- '(region ((t (:inverse-video t)))))
+ '(region ((t (:inverse-video t))))
+ '(whitespace-space ((((class color) (background dark)) (:background "black" :foreground "yellow"))))
+ '(whitespace-tab ((((class color) (background light)) (:background "black" :foreground "cyan")))))

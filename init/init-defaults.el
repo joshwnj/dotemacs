@@ -55,4 +55,19 @@
 ;; Sentences do not need double spaces to end. Period.
 (set-default 'sentence-end-double-space nil)
 
+;; Sane level of whitespace visibility
+;; custom whitespace markers
+(setq whitespace-display-mappings
+ '(
+   (space-mark 32 [32] [46]) ; normal space, display nothing
+   (tab-mark 9 [9655 9] [92 9]) ; tab, ▷
+))
+
+;; colors
+(custom-set-faces
+;; whitespace colors
+ '(whitespace-tab ((((class color) (background light)) (:background "black" :foreground "cyan"))))
+ '(whitespace-space ((((class color) (background dark)) (:background "black" :foreground "yellow"))))
+ )
+
 (provide 'init-defaults)
