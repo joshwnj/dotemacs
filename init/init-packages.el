@@ -5,11 +5,29 @@
 (package-initialize)
 
 (defvar required-packages
-  '(apache-mode erlang expand-region find-things-fast flymake-cursor flymake-easy
-                flymake-php json-mode less-css-mode markdown-mode
-                 move-text php-extras php-mode projectile smex sml-modeline tidy
-                wrap-region yas-jit yasnippet zencoding-mode)
-  "A list of packages we want to install.")
+  '(
+    apache-mode
+    erlang
+    expand-region
+    find-things-fast
+    flymake-cursor
+    flymake-easy
+    flymake-php
+    json-mode
+    less-css-mode
+    markdown-mode
+    move-text
+    php-extras
+    php-mode
+    projectile
+    smex
+    sml-modeline
+    tidy
+    wrap-region
+    yas-jit
+    yasnippet
+    zencoding-mode
+    ) "A list of packages we want to install.")
 
 (defun install-required-packages ()
   "Install all packages"
