@@ -4,6 +4,11 @@
 (setq inhibit-startup-message t)
 (fset 'yes-or-no-p 'y-or-n-p)
 
+(setq indent-tabs-mode nil)
+(setq c-basic-offset 4)
+(setq sgml-basic-offset 4)
+(setq js-indent-level 4)
+
 ;; no menu bar
 (menu-bar-mode -1)
 
