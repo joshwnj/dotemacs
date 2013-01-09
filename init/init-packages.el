@@ -7,6 +7,7 @@
 (defvar required-packages
   '(
     apache-mode
+    auto-complete
     erlang
     expand-region
     find-things-fast

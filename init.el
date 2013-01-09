@@ -17,6 +17,7 @@
 ;;;;
 ;; Misc settings
 
+(require 'init-autocomplete)
 (require 'init-backups)
 (require 'init-defaults)
 (require 'init-fs)
