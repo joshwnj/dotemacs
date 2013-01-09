@@ -54,5 +54,6 @@
  '(hl-line ((t (:background "black"))))
  '(mode-line ((t (:background "black"))))
  '(region ((t (:inverse-video t))))
+ '(whitespace-indentation ((t (:foreground "black"))))
  '(whitespace-space ((((class color) (background dark)) (:background "black" :foreground "yellow"))))
- '(whitespace-tab ((((class color) (background light)) (:background "black" :foreground "cyan")))))
+ '(whitespace-tab ((t (:background "black" :foreground "black" :weight ultra-bold)))))
