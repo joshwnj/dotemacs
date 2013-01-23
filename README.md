@@ -82,6 +82,6 @@ Install jslint
 
 ```
 npm install -g jslint
-cp ~/.emacs.d/install/jslint /usr/bin/jslint
-chmod +x /usr/bin/jslint
+cp ~/.emacs.d/install/jslint /usr/local/bin/jslint
+chmod +x /usr/local/bin/jslint
 ```

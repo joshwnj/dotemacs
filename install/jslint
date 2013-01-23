@@ -1,2 +1,2 @@
 #!/bin/bash
-/usr/local/share/npm/bin/jslint --browser --continue --devel --node --nomen --regexp --sloppy --vars --white --terse
+/usr/local/share/npm/bin/jslint --browser --continue --devel --node --nomen --regexp --sloppy --vars --white --es5 false $@
