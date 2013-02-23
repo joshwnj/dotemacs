@@ -36,6 +36,10 @@
 (require 'init-markdown)
 (require 'init-php)
 
+;; avoiding Meta
+(global-set-key (kbd "C-f") 'forward-word)
+(global-set-key (kbd "C-b") 'backward-word)
+
 ;;;;
 
 (custom-set-variables
@@ -51,9 +55,10 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(flymake-errline ((t (:foreground "magenta" :underline t))))
+ '(font-lock-comment-face ((t (:foreground "red"))))
  '(hl-line ((t (:background "black"))))
+ '(minibuffer-prompt ((t (:background "black"))))
  '(mode-line ((t (:background "black"))))
- '(region ((t (:inverse-video t))))
  '(whitespace-indentation ((t (:foreground "black"))))
  '(whitespace-space ((((class color) (background dark)) (:background "black" :foreground "yellow"))))
- '(whitespace-tab ((t (:background "black" :foreground "black" :weight ultra-bold)))))
+ '(whitespace-tab ((((class color) (background light)) (:background "black" :foreground "cyan")))))

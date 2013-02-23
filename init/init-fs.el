@@ -38,7 +38,7 @@
 (add-hook 'dired-mode-hook
           (lambda ()
             (local-unset-key (kbd "f"))
-            (define-key dired-mode-map (kbd "f f") 'dired-find-file)
+            (define-key dired-mode-map (kbd "f f") 'find-file)
             (define-key dired-mode-map (kbd "f g") 'grep-find)
             (define-key dired-mode-map (kbd "f a") 'ftf-find-file)
             ))

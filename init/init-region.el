@@ -24,6 +24,15 @@
     (define-key map (kbd "/ .") 'replace-regexp)
     (define-key map (kbd "?") 'query-replace)
 
+    ;; movement
+    (define-key map (kbd "j") 'next-line)
+    (define-key map (kbd "k") 'previous-line)
+    (define-key map (kbd "h") 'left-char)
+    (define-key map (kbd "l") 'right-char)
+
+    (define-key map (kbd "C-j") 'forward-paragraph)
+    (define-key map (kbd "C-k") 'backward-paragraph)
+
     ;; jump around
     (define-key map (kbd "a") 'move-beginning-of-line)
     (define-key map (kbd "e") 'move-end-of-line)
