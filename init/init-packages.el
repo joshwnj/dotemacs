@@ -1,27 +1,33 @@
 (require 'package)
-(add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/"))
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/"))
+
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                         ("marmalade" . "http://marmalade-repo.org/packages/")
+                         ("melpa" . "http://melpa.milkbox.net/packages/")))
+
 (package-initialize)
 
 (defvar required-packages
   '(
     apache-mode
     auto-complete
+    dropdown-list
+    electric-case
     erlang
     expand-region
     find-things-fast
     flymake-cursor
     flymake-easy
     flymake-php
+    golden-ratio
     json-mode
     less-css-mode
+    magit
+    markdown-mode
     move-text
+    org-journal
     php-extras
     php-mode
     smex
-    sml-modeline
     tidy
     wrap-region
     yas-jit

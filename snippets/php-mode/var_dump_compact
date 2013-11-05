@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: var_dump_compact
+# key: vdc
+# --
+var_dump(compact('$1'));

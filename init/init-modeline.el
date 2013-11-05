@@ -18,7 +18,7 @@
            (propertize " RO " 'face 'mode-line-read-only-face))
           ((buffer-modified-p)
            (propertize " ** " 'face 'mode-line-modified-face))
-          (t "      ")))
+          (t " ")))
    "    "
    ; directory and buffer/file name
    (:propertize (:eval (shorten-directory default-directory 30))
@@ -30,8 +30,8 @@
    (:propertize mode-name
                 face mode-line-mode-face)
    "%] "
-   (:eval (propertize (format-mode-line minor-mode-alist)
-                      'face 'mode-line-minor-mode-face))
+   ;; (:eval (propertize (format-mode-line minor-mode-alist)
+   ;;                    'face 'mode-line-minor-mode-face))
    ))
 
 ;; Helper function
