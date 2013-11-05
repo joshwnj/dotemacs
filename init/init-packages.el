@@ -1,7 +1,8 @@
 (require 'package)
 (add-to-list 'package-archives
-             '("marmalade" .
-               "http://marmalade-repo.org/packages/"))
+             '("marmalade" . "http://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/"))
 (package-initialize)
 
 (defvar required-packages
@@ -16,11 +17,9 @@
     flymake-php
     json-mode
     less-css-mode
-    markdown-mode
     move-text
     php-extras
     php-mode
-    projectile
     smex
     sml-modeline
     tidy

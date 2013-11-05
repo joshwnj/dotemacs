@@ -12,9 +12,6 @@
 
    (:propertize " %p " face font-lock-constant-face) ;; % above top
 
-   ; emacsclient [default -- keep?]
-   mode-line-client
-   "  "
    ; read-only or modified status
    (:eval
     (cond (buffer-read-only
@@ -28,20 +25,13 @@
                 face mode-line-folder-face)
    (:propertize "%b"
                 face mode-line-filename-face)
-   ; narrow [default -- keep?]
-   " %n "
-   ; mode indicators: vc, recursive edit, major mode, minor modes, process, global
-   (vc-mode vc-mode)
+   ; mode indicators: major mode, minor modes
    "  %["
    (:propertize mode-name
                 face mode-line-mode-face)
    "%] "
    (:eval (propertize (format-mode-line minor-mode-alist)
                       'face 'mode-line-minor-mode-face))
-   (:propertize mode-line-process
-                face mode-line-process-face)
-   (global-mode-string global-mode-string)
-   "    "
    ))
 
 ;; Helper function
@@ -70,45 +60,52 @@
 (make-face 'mode-line-80col-face)
 
 (set-face-attribute 'mode-line nil
-    :foreground "gray60" :background "gray20"
+    :foreground "white" :background "black"
     :inverse-video nil
-    :box '(:line-width 6 :color "gray20" :style nil))
+    :box '(:line-width 6 :color "black" :style nil))
+
 (set-face-attribute 'mode-line-inactive nil
-    :foreground "gray80" :background "gray40"
+    :foreground "white" :background nil
     :inverse-video nil
-    :box '(:line-width 6 :color "gray40" :style nil))
+    :box '(:line-width 6 :color "black" :style nil))
 
 (set-face-attribute 'mode-line-read-only-face nil
     :inherit 'mode-line-face
-    :foreground "#4271ae"
-    :box '(:line-width 2 :color "#4271ae"))
+    :foreground "magenta"
+    :box '(:line-width 2 :color "black"))
+
 (set-face-attribute 'mode-line-modified-face nil
     :inherit 'mode-line-face
-    :foreground "#c82829"
-    :background "#ffffff"
-    :box '(:line-width 2 :color "#c82829"))
+    :foreground "red"
+    :background "white"
+    :box '(:line-width 2 :color "white"))
+
 (set-face-attribute 'mode-line-folder-face nil
     :inherit 'mode-line-face
-    :foreground "gray60")
+    :foreground "white")
+
 (set-face-attribute 'mode-line-filename-face nil
     :inherit 'mode-line-face
-    :foreground "#eab700"
+    :foreground "green"
     :weight 'bold)
+
 (set-face-attribute 'mode-line-position-face nil
-    :inherit 'mode-line-face
-    :family "Menlo" :height 100)
+    :inherit 'mode-line-face)
+
 (set-face-attribute 'mode-line-mode-face nil
     :inherit 'mode-line-face
-    :foreground "gray80")
+    :foreground "white")
+
 (set-face-attribute 'mode-line-minor-mode-face nil
     :inherit 'mode-line-mode-face
-    :foreground "gray40"
-    :height 110)
+    :foreground "green")
+
 (set-face-attribute 'mode-line-process-face nil
     :inherit 'mode-line-face
-    :foreground "#718c00")
+    :foreground "white")
+
 (set-face-attribute 'mode-line-80col-face nil
     :inherit 'mode-line-position-face
-    :foreground "black" :background "#eab700")
+    :foreground "white")
 
 (provide 'init-modeline)

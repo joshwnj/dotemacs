@@ -61,10 +61,10 @@
   (if (= disable-transient-mode 2)
       (transient-mark-mode -1)
     (progn
-      (setq region-is-highlighted (if region-is-highlighted nil t))	    
+      (setq region-is-highlighted (if region-is-highlighted nil t))
       (if region-is-highlighted
-	  (region-make-highlighted)
-	(region-make-unhighlighted)))
+          (region-make-highlighted)
+        (region-make-unhighlighted)))
     ))
 
 (defun region-make-highlighted ()
@@ -101,7 +101,7 @@
   (unless (minibufferp)
     (progn
       (custom-set-faces
-       '(mode-line ((t (:background "cyan"))))
+       '(mode-line ((t (:inverse-video t))))
        )
       (region-shortcut-mode 1))))
 
@@ -126,5 +126,7 @@
 ;; disable when we're in the minibuffer
 (add-hook 'minibuffer-setup-hook 'region-shortcut-off)
 (add-hook 'minibuffer-exit-hook 'region-shortcut-selective-toggle)
+
+;; TODO move the face-updating to a hook
 
 (provide 'init-region)

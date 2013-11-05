@@ -4,7 +4,7 @@
 (setq inhibit-startup-message t)
 (fset 'yes-or-no-p 'y-or-n-p)
 
-(setq indent-tabs-mode nil)
+(setq-default indent-tabs-mode nil)
 (setq c-basic-offset 4)
 (setq sgml-basic-offset 4)
 (setq js-indent-level 4)
@@ -54,9 +54,6 @@
 (put 'transient-mark-mode 'permanent-local t)
 (setq-default transient-mark-mode t)
 
-;; Don't break lines for me, please
-(setq-default truncate-lines t)
-
 ;; Sentences do not need double spaces to end. Period.
 (set-default 'sentence-end-double-space nil)
 
@@ -67,6 +64,11 @@
    (space-mark 32 [32] [46]) ; normal space, display nothing
    (tab-mark 9 [9655 9] [92 9]) ; tab, ▷
 ))
+
+;; autosaves and backups
+(custom-set-variables
+ '(auto-save-file-name-transforms (quote ((".*" "~/.emacs_autosaves/\\1" t))))
+ '(backup-directory-alist (quote ((".*" . "~/.emacs_backups/")))))
 
 ;; colors
 (custom-set-faces

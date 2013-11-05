@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: rq: ...
-# key: rq
-# --
-var $1 = require('$1');
