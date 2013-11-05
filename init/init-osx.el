@@ -19,8 +19,4 @@
       (process-send-string proc default-directory)
       (process-send-eof proc))))
 
-(global-set-key (kbd "C-c c") 'osx-pbcopy)
-(global-set-key (kbd "C-c v") 'osx-pbpaste)
-(global-set-key (kbd "C-c d") 'osx-get-cwd)
-
 (provide 'init-osx)
