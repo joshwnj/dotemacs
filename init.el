@@ -1,7 +1,4 @@
 ;;;;
-;; TODO: isearch colors
-
-;;;;
 ;; Auto-Discover .el files
 
 (require 'cl)

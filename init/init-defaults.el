@@ -72,4 +72,15 @@
  '(whitespace-space ((((class color) (background dark)) (:background "black" :foreground "yellow"))))
  )
 
+;;;;
+;; source: https://github.com/technomancy/better-defaults/blob/master/better-defaults.el
+
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'forward)
+
+(require 'saveplace)
+(setq-default save-place t)
+
+;;;;
+
 (provide 'init-defaults)
