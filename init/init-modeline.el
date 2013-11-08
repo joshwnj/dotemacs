@@ -30,8 +30,6 @@
    (:propertize mode-name
                 face mode-line-mode-face)
    "%] "
-   ;; (:eval (propertize (format-mode-line minor-mode-alist)
-   ;;                    'face 'mode-line-minor-mode-face))
    ))
 
 ;; Helper function
@@ -47,65 +45,5 @@
     (when path
       (setq output (concat ".../" output)))
     output))
-
-;; Extra mode line faces
-(make-face 'mode-line-read-only-face)
-(make-face 'mode-line-modified-face)
-(make-face 'mode-line-folder-face)
-(make-face 'mode-line-filename-face)
-(make-face 'mode-line-position-face)
-(make-face 'mode-line-mode-face)
-(make-face 'mode-line-minor-mode-face)
-(make-face 'mode-line-process-face)
-(make-face 'mode-line-80col-face)
-
-(set-face-attribute 'mode-line nil
-    :foreground "white" :background "black"
-    :inverse-video nil
-    :box '(:line-width 6 :color "black" :style nil))
-
-(set-face-attribute 'mode-line-inactive nil
-    :foreground "white" :background nil
-    :inverse-video nil
-    :box '(:line-width 6 :color "black" :style nil))
-
-(set-face-attribute 'mode-line-read-only-face nil
-    :inherit 'mode-line-face
-    :foreground "magenta"
-    :box '(:line-width 2 :color "black"))
-
-(set-face-attribute 'mode-line-modified-face nil
-    :inherit 'mode-line-face
-    :foreground "red"
-    :background "white"
-    :box '(:line-width 2 :color "white"))
-
-(set-face-attribute 'mode-line-folder-face nil
-    :inherit 'mode-line-face
-    :foreground "white")
-
-(set-face-attribute 'mode-line-filename-face nil
-    :inherit 'mode-line-face
-    :foreground "green"
-    :weight 'bold)
-
-(set-face-attribute 'mode-line-position-face nil
-    :inherit 'mode-line-face)
-
-(set-face-attribute 'mode-line-mode-face nil
-    :inherit 'mode-line-face
-    :foreground "white")
-
-(set-face-attribute 'mode-line-minor-mode-face nil
-    :inherit 'mode-line-mode-face
-    :foreground "green")
-
-(set-face-attribute 'mode-line-process-face nil
-    :inherit 'mode-line-face
-    :foreground "white")
-
-(set-face-attribute 'mode-line-80col-face nil
-    :inherit 'mode-line-position-face
-    :foreground "white")
 
 (provide 'init-modeline)
