@@ -10,28 +10,26 @@
   '(
     apache-mode
     auto-complete
+    circe
     dropdown-list
     electric-case
     erlang
     expand-region
     find-things-fast
-    flymake-cursor
-    flymake-easy
-    flymake-php
+    flycheck
     golden-ratio
     json-mode
     less-css-mode
     magit
     markdown-mode
     move-text
-    org-journal
     php-extras
     php-mode
+    projectile
     smex
     tidy
+    visual-regexp
     wrap-region
-    yas-jit
-    yasnippet
     zencoding-mode
     ) "A list of packages we want to install.")
 
