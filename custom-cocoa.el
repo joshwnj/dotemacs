@@ -7,6 +7,8 @@
  ;; If there is more than one, they won't work right.
  '(auto-save-file-name-transforms (quote ((".*" "~/.emacs_autosaves/\\1" t))))
  '(backup-directory-alist (quote ((".*" . "~/.emacs_backups/"))))
+ '(circe-default-nick "joshwnj")
+ '(erc-hide-list (quote ("JOIN" "PART" "QUIT")))
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil))
 (custom-set-faces
