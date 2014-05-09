@@ -1,4 +1,6 @@
 
+;; ----
+
 ;; TODO: move these elsewhere
 
 (defun switch-to-other-buffer ()
@@ -37,6 +39,10 @@
   (define-key map (kbd "b k") 'kill-this-buffer)
   (define-key map (kbd "b s") 'save-buffer)
   (define-key map (kbd "b o") 'switch-to-other-buffer)
+
+  ;; bookmarks
+  (define-key map (kbd "b m") 'bookmark-set)
+  (define-key map (kbd "b j") 'bookmark-jump)
 
   ;; clipboard
   (define-key map (kbd "c b") 'browse-kill-ring)
@@ -85,6 +91,7 @@
   (define-key map (kbd "o u") 'convert-case/upper-camel)
   (define-key map (kbd "o -") 'convert-case/dash)
   (define-key map (kbd "o =") 'convert-case/underscore)
+  (define-key map (kbd "o o") 'camelscore-word-at-point)
 
   ;; region / mark
   (define-key map (kbd "=") 'er/expand-region)
@@ -184,15 +191,19 @@
 
 (defun shortcut-visual-on ()
   (global-hl-line-mode 1)
+  
   (custom-set-faces
    '(mode-line ((t (:inverse-video t))))
-   ))
+   )
+)
 
 (defun shortcut-visual-off ()
   (global-hl-line-mode -1)
+
   (custom-set-faces
    '(mode-line ((t (:background "black"))))
-   ))
+   )
+)
 
 (defun on-shortcut-mode ()
   "Handle changing state of Shortcut mode."

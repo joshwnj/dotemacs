@@ -10,14 +10,20 @@
 (require 'init-packages)
 
 (require 'electric-case)
-(require 'org-journal)
 
 (require 'auto-complete)
 (global-auto-complete-mode)
 
-(require 'flymake-cursor)
+(projectile-global-mode)
+
+(global-set-key (kbd "M-i") 'change-inner)
+(global-set-key (kbd "M-o") 'change-outer)
+
+(global-set-key (kbd "C-p") 'goto-last-change)
+(global-set-key (kbd "C-n") 'goto-last-change-reverse)
 
 (winner-mode)
+
 (recentf-mode)
 
 ;;;;
@@ -35,7 +41,9 @@
 (require 'init-osx)
 (require 'init-ido)
 (require 'init-shortcuts)
-(require 'init-snippets)
+
+;; disabled because it seems to be crashing sometimes
+;(require 'init-snippets)
 
 ;;;;
 ;; Major modes
@@ -53,3 +61,4 @@
  (t (setq custom-file "~/.emacs.d/custom-term.el")))
 
 (load custom-file)
+(put 'narrow-to-region 'disabled nil)

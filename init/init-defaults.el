@@ -5,6 +5,7 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 
 (setq indent-tabs-mode nil)
+(setq-default indent-tabs-mode nil)
 (setq c-basic-offset 4)
 (setq sgml-basic-offset 4)
 (setq js-indent-level 4)
