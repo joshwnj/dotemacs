@@ -116,6 +116,7 @@
   (define-key map (kbd "v w") 'global-whitespace-mode)
 
   ;; windows
+  (define-key map (kbd "w w") 'ace-window)
   (define-key map (kbd "w b") 'balance-windows)
   (define-key map (kbd "w g") 'golden-ratio-mode)
   (define-key map (kbd "w o") 'other-window)

@@ -8,6 +8,7 @@
 
 (defvar required-packages
   '(
+    ace-window
     apache-mode
     auto-complete
     circe

@@ -23,8 +23,10 @@
 (global-set-key (kbd "C-n") 'goto-last-change-reverse)
 
 (winner-mode)
-
 (recentf-mode)
+
+;; ace-window keys
+(setq aw-keys '(?q ?w ?e ?r ?a ?s ?d ?f))
 
 ;;;;
 ;; Default settings
