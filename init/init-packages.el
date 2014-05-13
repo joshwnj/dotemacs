@@ -27,6 +27,7 @@
     php-extras
     php-mode
     projectile
+    simpleclip
     smex
     tidy
     visual-regexp

@@ -51,8 +51,8 @@
   (define-key map (kbd "c y") 'yank)
 
   ;; clipboard (osx)
-  (define-key map (kbd "c o c") 'osx-pbcopy)
-  (define-key map (kbd "c o v") 'osx-pbpaste)
+  (define-key map (kbd "c o c") 'simpleclip-copy)
+  (define-key map (kbd "c o v") 'simpleclip-paste)
   (define-key map (kbd "c o d") 'osx-get-cwd)
 
   ;; comments
@@ -66,9 +66,10 @@
   (define-key map (kbd "f r") 'ido-recentf-open)
 
   ;; go (navigate to a point in a buffer)
-  (define-key map (kbd "g f") 'fastnav-sprint-forward)
-  (define-key map (kbd "g r") 'fastnav-sprint-backward)
+  (define-key map (kbd "g f") 'jump-char-forward)
+  (define-key map (kbd "g r") 'jump-char-backward)
   (define-key map (kbd "g l") 'goto-line-with-feedback)
+  (define-key map (kbd "g s") 'helm-swoop)
   (define-key map (kbd "g .") 'next-error)
   (define-key map (kbd "g ,") 'previous-error)
 

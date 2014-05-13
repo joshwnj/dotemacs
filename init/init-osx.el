@@ -1,16 +1,3 @@
-(defun osx-pbcopy (start end)
-  "Copy data to osx clipboard."
-  (interactive "r")
-  (shell-command-on-region start end "pbcopy"))
-
-(defun osx-pbpaste ()
-  "Paste data from osx clipboard."
-  (interactive)
-  (shell-command-on-region
-   (point)
-   (if mark-active (mark) (point))
-   "pbpaste" nil t))
-
 (defun osx-get-cwd ()
   "Copy the current directory to osx clipboard."
   (interactive)
