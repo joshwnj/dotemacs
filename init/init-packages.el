@@ -33,6 +33,7 @@
     tidy
     visual-regexp
     wrap-region
+    yascroll
     zencoding-mode
     ) "A list of packages we want to install.")
 

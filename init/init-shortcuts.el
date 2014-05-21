@@ -119,6 +119,7 @@
   ;; visual flags
   (define-key map (kbd "v m") 'show-marks)
   (define-key map (kbd "v w") 'global-whitespace-mode)
+  (define-key map (kbd "v s") 'global-yascroll-bar-mode)
 
   ;; windows
   (define-key map (kbd "w w") 'ace-window)
