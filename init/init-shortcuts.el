@@ -72,6 +72,9 @@
   (define-key map (kbd "g s") 'helm-swoop)
   (define-key map (kbd "g .") 'next-error)
   (define-key map (kbd "g ,") 'previous-error)
+  (define-key map (kbd "g m") 'forward-mark)
+  (define-key map (kbd "g n") 'backward-mark)
+
 
   ;; kill
   (define-key map (kbd "k f") 'fastnav-zap-to-char-forward)
@@ -114,6 +117,7 @@
   (define-key map (kbd "i ]") 'indent-rigidly)
 
   ;; visual flags
+  (define-key map (kbd "v m") 'show-marks)
   (define-key map (kbd "v w") 'global-whitespace-mode)
 
   ;; windows

@@ -22,6 +22,7 @@
     json-mode
     less-css-mode
     magit
+    mark
     markdown-mode
     move-text
     php-extras
