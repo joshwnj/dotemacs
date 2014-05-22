@@ -58,6 +58,10 @@
   ;; comments
   (define-key map (kbd ";") 'comment-or-uncomment-region)
 
+  ;; directory
+  (define-key map (kbd "d d") 'dired)
+  (define-key map (kbd "d s") 'shell-pop)
+
   ;; file
   (define-key map (kbd "f a") 'ftf-find-file)
   (define-key map (kbd "f c") 'create-new-file)

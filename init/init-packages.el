@@ -28,6 +28,7 @@
     php-extras
     php-mode
     projectile
+    shell-pop
     simpleclip
     smex
     tidy
