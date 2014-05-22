@@ -140,6 +140,10 @@
   (define-key map (kbd "w k") 'windmove-up)
   (define-key map (kbd "w h") 'windmove-left)
   (define-key map (kbd "w l") 'windmove-right)
+  (define-key map (kbd "w e v") 'rotate:even-vertical)
+  (define-key map (kbd "w e h") 'rotate:even-horizontal)
+  (define-key map (kbd "w m v") 'rotate:main-vertical)
+  (define-key map (kbd "w m h") 'rotate:main-horizontal)
 
   (define-key map (kbd "x h") 'helm-M-x)
   (define-key map (kbd "x x") 'smex)

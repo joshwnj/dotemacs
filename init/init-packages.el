@@ -28,6 +28,7 @@
     php-extras
     php-mode
     projectile
+    rotate
     shell-pop
     simpleclip
     smex
