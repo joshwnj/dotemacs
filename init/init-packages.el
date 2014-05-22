@@ -28,6 +28,7 @@
     php-extras
     php-mode
     projectile
+    relative-line-numbers
     rotate
     shell-pop
     simpleclip

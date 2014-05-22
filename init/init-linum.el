@@ -21,6 +21,19 @@
 ;; replace all goto-line
 (global-set-key (vector 'remap 'goto-line) 'goto-line-with-feedback)
 
+(defun goto-relative-line-with-feedback (&optional delta)
+  "Show relative line numbers temporarily, while prompting for the line number input"
+  (interactive "P")
+  (if delta
+      (next-line delta)
+    (unwind-protect
+        (progn
+          (relative-line-numbers-mode 1)
+          (next-line (read-number "Relative line: ")))
+      (relative-line-numbers-mode -1))))
+
+(global-set-key (kbd "M-l") 'goto-relative-line-with-feedback)
+
 
 ;;;;
 ;; show column overlay

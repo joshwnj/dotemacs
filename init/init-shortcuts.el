@@ -73,6 +73,7 @@
   (define-key map (kbd "g f") 'jump-char-forward)
   (define-key map (kbd "g r") 'jump-char-backward)
   (define-key map (kbd "g l") 'goto-line-with-feedback)
+  (define-key map (kbd "g ;") 'goto-relative-line-with-feedback)
   (define-key map (kbd "g s") 'helm-swoop)
   (define-key map (kbd "g .") 'next-error)
   (define-key map (kbd "g ,") 'previous-error)
