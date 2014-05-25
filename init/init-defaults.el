@@ -30,6 +30,10 @@
 (setq global-auto-revert-non-file-buffers t)
 (setq auto-revert-verbose nil)
 
+;; Hide dired details by default
+(add-hook 'dired-mode-hook
+          (lambda () (dired-hide-details-mode 1)))
+
 ;; Show keystrokes in progress
 (setq echo-keystrokes 0.1)
 

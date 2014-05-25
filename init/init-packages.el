@@ -12,7 +12,6 @@
     apache-mode
     auto-complete
     circe
-    dired-details
     dropdown-list
     electric-case
     erlang
