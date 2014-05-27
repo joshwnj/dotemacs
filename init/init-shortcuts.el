@@ -120,6 +120,10 @@
   (define-key map (kbd "i u") 'untabify)
   (define-key map (kbd "i i") 'indent-region)
   (define-key map (kbd "i ]") 'indent-rigidly)
+  ;; undo
+  (define-key map (kbd "u h") 'undo-tree-undo)
+  (define-key map (kbd "u l") 'undo-tree-redo)
+  (define-key map (kbd "u v") 'undo-tree-visualize)
 
   ;; visual flags
   (define-key map (kbd "v m") 'show-marks)

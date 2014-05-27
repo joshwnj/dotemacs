@@ -34,6 +34,7 @@
     simpleclip
     smex
     tidy
+    undo-tree
     visual-regexp
     whole-line-or-region
     wrap-region

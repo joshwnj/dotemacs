@@ -14,6 +14,9 @@
 (require 'auto-complete)
 (global-auto-complete-mode)
 
+(require 'undo-tree-mode)
+
+
 (projectile-global-mode)
 
 (global-set-key (kbd "M-i") 'change-inner)
