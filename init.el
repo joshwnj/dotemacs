@@ -11,8 +11,6 @@
 
 (require 'electric-case)
 
-(require 'auto-complete)
-(global-auto-complete-mode)
 
 (undo-tree-mode)
 
@@ -40,6 +38,7 @@
 ;;;;
 ;; Custom settings
 
+(require 'init-autocomplete)
 (require 'init-backups)
 (require 'init-case)
 (require 'init-linum)
@@ -61,7 +60,7 @@
 ;;;;
 ;; customisations
 
-(cond 
+(cond
  ((window-system) (setq custom-file "~/.emacs.d/custom-cocoa.el"))
  (t (setq custom-file "~/.emacs.d/custom-term.el")))
 

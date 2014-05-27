@@ -10,8 +10,8 @@
   '(
     ace-window
     apache-mode
-    auto-complete
     circe
+    company
     dropdown-list
     electric-case
     erlang
