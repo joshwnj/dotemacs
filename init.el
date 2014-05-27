@@ -43,7 +43,6 @@
 (require 'init-backups)
 (require 'init-case)
 (require 'init-linum)
-(require 'init-modeline)
 (require 'init-osx)
 (require 'init-ido)
 (require 'init-shortcuts)
