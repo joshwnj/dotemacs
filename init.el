@@ -11,9 +11,9 @@
 
 (require 'electric-case)
 
+(require 'occur-default-current-word)
 
 (undo-tree-mode)
-
 
 (projectile-global-mode)
 

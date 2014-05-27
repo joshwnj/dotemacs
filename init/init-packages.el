@@ -10,6 +10,7 @@
   '(
     ace-window
     apache-mode
+    change-inner
     circe
     company
     dropdown-list
@@ -18,6 +19,7 @@
     expand-region
     find-things-fast
     flycheck
+    goto-last-change
     hiwin
     json-mode
     less-css-mode

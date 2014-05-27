@@ -3,6 +3,16 @@
 
 ;; TODO: move these elsewhere
 
+(defun un-indent-rigidly (start end arg)
+  (interactive "r\np")
+  (indent-rigidly start end (* -1 arg)))
+
+(defun mark-whole-line ()
+  (interactive)
+  (move-end-of-line nil)
+  (set-mark-command nil)
+  (move-beginning-of-line nil))
+
 (defun switch-to-other-buffer ()
   (interactive)
   (switch-to-buffer (other-buffer (current-buffer) 1)))
@@ -45,7 +55,7 @@
   (define-key map (kbd "b j") 'bookmark-jump)
 
   ;; clipboard
-  (define-key map (kbd "c b") 'browse-kill-ring)
+  (define-key map (kbd "c b") 'helm-show-kill-ring)
   (define-key map (kbd "c c") 'kill-ring-save)
   (define-key map (kbd "c x") 'kill-region)
   (define-key map (kbd "c y") 'yank)
@@ -73,13 +83,10 @@
   (define-key map (kbd "g f") 'jump-char-forward)
   (define-key map (kbd "g r") 'jump-char-backward)
   (define-key map (kbd "g l") 'goto-line-with-feedback)
-  (define-key map (kbd "g ;") 'goto-relative-line-with-feedback)
-  (define-key map (kbd "g s") 'helm-swoop)
   (define-key map (kbd "g .") 'next-error)
   (define-key map (kbd "g ,") 'previous-error)
   (define-key map (kbd "g m") 'forward-mark)
   (define-key map (kbd "g n") 'backward-mark)
-
 
   ;; kill
   (define-key map (kbd "k f") 'fastnav-zap-to-char-forward)
@@ -87,6 +94,14 @@
   (define-key map (kbd "k l") 'kill-whole-line)
   (define-key map (kbd "k w") 'kill-word)
   (define-key map (kbd "k z") 'zap-to-char)
+
+  (define-key map (kbd "k i") (lambda (arg)
+                                (interactive "p")
+                                (progn
+                                  (change-inner arg)
+                                  (shortcut-mode -1)
+                                  )))
+  (define-key map (kbd "k o") 'change-outer)
 
   ;; modes
   (define-key map (kbd "m c") 'css-mode)
@@ -106,6 +121,8 @@
   (define-key map (kbd "=") 'er/expand-region)
   (define-key map (kbd "-") 'er/contract-region)
   (define-key map (kbd "r x") 'exchange-point-and-mark)
+  (define-key map (kbd "SPC l") 'mark-whole-line)
+  (define-key map (kbd "SPC b") 'mark-whole-buffer)
 
   ;; search
   (define-key map (kbd "s b") 'isearch-backward)
@@ -120,6 +137,8 @@
   (define-key map (kbd "i u") 'untabify)
   (define-key map (kbd "i i") 'indent-region)
   (define-key map (kbd "i ]") 'indent-rigidly)
+  (define-key map (kbd "i [") 'un-indent-rigidly)
+
   ;; undo
   (define-key map (kbd "u h") 'undo-tree-undo)
   (define-key map (kbd "u l") 'undo-tree-redo)
@@ -128,6 +147,7 @@
   ;; visual flags
   (define-key map (kbd "v m") 'show-marks)
   (define-key map (kbd "v w") 'global-whitespace-mode)
+  (define-key map (kbd "v r") 'relative-line-numbers-mode)
   (define-key map (kbd "v s") 'global-yascroll-bar-mode)
 
   ;; windows
