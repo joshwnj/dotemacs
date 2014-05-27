@@ -25,6 +25,7 @@
 (global-set-key (kbd "C-p") 'goto-last-change)
 (global-set-key (kbd "C-n") 'goto-last-change-reverse)
 
+(hiwin-activate)
 (winner-mode)
 (recentf-mode)
 

@@ -18,7 +18,7 @@
     expand-region
     find-things-fast
     flycheck
-    golden-ratio
+    hiwin
     json-mode
     less-css-mode
     magit
