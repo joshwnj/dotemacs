@@ -14,7 +14,7 @@
 (require 'auto-complete)
 (global-auto-complete-mode)
 
-(require 'undo-tree-mode)
+(undo-tree-mode)
 
 
 (projectile-global-mode)
