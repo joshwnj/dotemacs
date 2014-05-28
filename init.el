@@ -8,27 +8,32 @@
 ;; installed packages
 
 (require 'init-packages)
+(require 'use-package)
 
-(require 'electric-case)
+(use-package occur-default-current-word
+  :init
+  (require 'occur-default-current-word))
 
-(require 'occur-default-current-word)
+(use-package undo-tree
+  :init
+  (undo-tree-mode))
 
-(undo-tree-mode)
+(use-package projectile
+  :init
+  (projectile-global-mode))
 
-(projectile-global-mode)
+(use-package hiwin
+  :init
+  (hiwin-activate))
 
-(global-set-key (kbd "M-i") 'change-inner)
-(global-set-key (kbd "M-o") 'change-outer)
-
-(global-set-key (kbd "C-p") 'goto-last-change)
-(global-set-key (kbd "C-n") 'goto-last-change-reverse)
-
-(hiwin-activate)
-(winner-mode)
-(recentf-mode)
+(use-package winner
+  :init
+  (winner-mode))
 
 ;; ace-window keys
-(setq aw-keys '(?q ?w ?e ?r ?a ?s ?d ?f))
+(use-package ace-window
+  :init
+  (setq aw-keys '(?q ?w ?e ?r ?a ?s ?d ?f)))
 
 ;;;;
 ;; Default settings

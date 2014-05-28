@@ -31,6 +31,7 @@
     smex
     tidy
     undo-tree
+    use-package
     visual-regexp
     whole-line-or-region
     wrap-region

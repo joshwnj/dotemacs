@@ -1,6 +1,9 @@
-(require 'flycheck)
-(add-hook 'js-mode-hook
-          (lambda () (flycheck-mode t)))
+(use-package flycheck
+  :init
+  (progn
+    (require 'flycheck)
+    (add-hook 'js-mode-hook
+              (lambda () (flycheck-mode t)))))
 
 ;;;;
 ;; to install:

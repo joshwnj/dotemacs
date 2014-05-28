@@ -1,7 +1,18 @@
 
 ;; ----
-
 ;; TODO: move these elsewhere
+
+(use-package change-inner
+  :init
+  (progn
+    (global-set-key (kbd "M-i") 'change-inner)
+    (global-set-key (kbd "M-o") 'change-outer)))
+
+(use-package goto-last-change
+  :init
+  (progn
+    (global-set-key (kbd "C-p") 'goto-last-change)
+    (global-set-key (kbd "C-n") 'goto-last-change-reverse)))
 
 (defun un-indent-rigidly (start end arg)
   (interactive "r\np")
@@ -117,6 +128,9 @@
   (define-key map (kbd "o =") 'convert-case/underscore)
   (define-key map (kbd "o o") 'camelscore-word-at-point)
 
+  ;; projectile
+  (define-key map (kbd "p s") 'projectile-switch-project)
+
   ;; region / mark
   (define-key map (kbd "=") 'er/expand-region)
   (define-key map (kbd "-") 'er/contract-region)
@@ -216,14 +230,14 @@
   "Temporarily disable shortcut mode while we're in the minibuffer"
   (if (eq shortcut-mode t)
       (progn
-	(global-shortcut-off)
-	(setq shortcut-reenable-after-minibuffer t))))
+        (global-shortcut-off)
+        (setq shortcut-reenable-after-minibuffer t))))
 
 (defun shortcut-reenable ()
   "Re-enable Shortcut mode if it was temporarily disabled."
   (if (eq shortcut-reenable-after-minibuffer t)
       (progn
-	(global-shortcut-on))))
+        (global-shortcut-on))))
 
 ;; disable when we're in the minibuffer
 (add-hook 'minibuffer-setup-hook 'shortcut-temp-disable)
@@ -231,7 +245,7 @@
 
 (defun shortcut-visual-on ()
   (global-hl-line-mode 1)
-  
+
   (custom-set-faces
    '(mode-line ((t (:inverse-video t))))
    )
