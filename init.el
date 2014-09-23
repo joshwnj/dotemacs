@@ -63,6 +63,11 @@
 (require 'init-php)
 
 ;;;;
+;; Utilities
+
+(require 'init-erc)
+
+;;;;
 ;; customisations
 
 (cond
