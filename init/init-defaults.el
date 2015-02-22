@@ -10,8 +10,9 @@
 (setq sgml-basic-offset 4)
 (setq js-indent-level 4)
 
-;; no menu bar
+;; no menu bar or tool bar
 (menu-bar-mode -1)
+(tool-bar-mode -1)
 
 ;; highlight matching parens
 (show-paren-mode 1)
@@ -23,8 +24,8 @@
 ;; no hl line
 (global-hl-line-mode -1)
 
-;; Auto refresh buffers
-(global-auto-revert-mode 1)
+;; Disable auto refresh buffers (seems to sometimes cause periodic flickering)
+(global-auto-revert-mode -1)
 
 ;; Also auto refresh dired, but be quiet about it
 (setq global-auto-revert-non-file-buffers t)
@@ -70,13 +71,6 @@
    (tab-mark 9 [9655 9] [92 9]) ; tab, ▷
 ))
 
-;; colors
-(custom-set-faces
-;; whitespace colors
- '(whitespace-tab ((((class color) (background light)) (:background "black" :foreground "cyan"))))
- '(whitespace-space ((((class color) (background dark)) (:background "black" :foreground "yellow"))))
- )
-
 ;;;;
 ;; source: https://github.com/technomancy/better-defaults/blob/master/better-defaults.el
 
@@ -85,6 +79,19 @@
 
 (require 'saveplace)
 (setq-default save-place t)
+
+;; track recent files
+(recentf-mode)
+
+;;;;
+;; scrolling (don't auto-recenter, it's really distracting)
+;; source: http://zhangda.wordpress.com/2009/05/21/customize-emacs-automatic-scrolling-and-stop-the-cursor-from-jumping-around-as-i-move-it/
+
+(setq
+    scroll-margin 1
+    scroll-conservatively 0
+    scroll-up-aggressively 0.01
+    scroll-down-aggressively 0.01)
 
 ;;;;
 
