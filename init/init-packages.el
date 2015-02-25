@@ -69,6 +69,7 @@
     ;; erc-colorize
     ;; erc-hl-nicks
      magit
+     nodejs-repl
     ;; zencoding-mode
 
     ;; ----
