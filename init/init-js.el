@@ -5,6 +5,11 @@
     (add-hook 'js-mode-hook
               (lambda () (flycheck-mode t)))))
 
+(use-package web-mode
+  :init
+  (progn
+      (add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))))
+
 ;;;;
 ;; to install:
 ;; $ npm install -g grasp strip-ansi
