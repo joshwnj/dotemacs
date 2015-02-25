@@ -1,3 +1,5 @@
+(require 'erc)
+
 ;; This defines the password variables below
 (when (file-exists-p "~/.private.el")
   (load-file "~/.private.el"))
@@ -17,3 +19,8 @@
 
 ;; ignore certain events
 (setq erc-hide-list '("PART" "QUIT"))
+
+;; colorize
+(erc-colorize-mode 1)
+
+(provide 'init-erc)
