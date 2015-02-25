@@ -16,7 +16,7 @@
           (goto-line (read-number "Goto line: ")))
       (linum-mode -1))))
 
-(global-set-key (kbd "C-l") 'goto-line-with-feedback)
+(global-set-key (kbd "C-c C-l") 'goto-line-with-feedback)
 
 ;; replace all goto-line
 (global-set-key (vector 'remap 'goto-line) 'goto-line-with-feedback)
