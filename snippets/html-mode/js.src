@@ -1,4 +1,0 @@
-#name : Script include
-# key: js
-# --
-<script src="$0"></script>

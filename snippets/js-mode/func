@@ -1,6 +1,0 @@
-# name: func: ...
-# key: func
-# --
-function $1 ($2) {
-    $0
-}
