@@ -1,0 +1,10 @@
+*.elc
+*.eld
+ac-comphist.dat
+auto-save-list
+bookmarks
+elpa
+url
+ido.last
+recentf
+smex-items
