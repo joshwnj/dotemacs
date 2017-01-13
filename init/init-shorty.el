@@ -2,13 +2,6 @@
 ;;
 ;; custom shortcuts for modal editing
 
-;; - when you're in insert-mode, everything is part of the active region. So you can operate on the region as you insert
-;; - for quick edits, select region (or just a point). Enter new text in the modeline, and then hit enter. This means you don't have to switch modes
-
-;; usual flow:
-;; - define start and end of region (or just the start, if you only want to insert at point)
-;; - operate, insert or edit
-
 (require 'popup)
 
 (defun mark-whole-line ()
