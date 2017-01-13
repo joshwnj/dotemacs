@@ -65,12 +65,17 @@
 
 
 (when (string= (getenv "TERM") "xterm-256color")
-  (load-theme 'tango-dark))
+  (load-theme 'adwaita))
 
 ;;;;
 ;; Show a list of recent files as the default screen
 
 (recentf-open-files)
+
+;;;;
+;; activate shorty-mode by default
+
+(global-shorty-on)
 
 ;;;;
 
@@ -86,16 +91,30 @@
     ("a2dd771a05705be2a6e6adb6ddbc7a27ebf49edab1dffdbefe243096becba7c9" "15348febfa2266c4def59a08ef2846f6032c0797f001d7b9148f30ace0d08bcf" default)))
  '(mode-line-format
    (quote
-    ("%e" " " mode-line-modified " " mode-line-buffer-identification " (" mode-name ") "
-     (vc-mode vc-mode))))
+    ("%e" " " mode-line-modified " " mode-line-buffer-identification " | " mode-name " "
+     (vc-mode vc-mode)
+     " | " minor-mode-alist)))
  '(mode-line-in-non-selected-windows t)
  '(package-selected-packages
    (quote
-    (expand-region thing-cmds editorconfig flatui-theme json-mode osx-trash bool-flip indent-guide magit magit-gh-pulls white-theme markdown-mode web-mode popup ag company smex projectile undo-tree use-package))))
+    (backward-forward shift-number expand-region thing-cmds editorconfig flatui-theme json-mode osx-trash bool-flip indent-guide magit magit-gh-pulls white-theme markdown-mode web-mode popup ag company smex projectile undo-tree use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(cursor ((t nil)))
- '(mode-line ((t (:inverse-video t)))))
+ '(hl-line ((t (:underline t))))
+ '(magit-diff-added ((t (:foreground "green"))))
+ '(magit-diff-added-highlight ((t (:foreground "#22aa22"))))
+ '(magit-diff-base ((t (:background "red" :foreground "black"))))
+ '(magit-diff-base-highlight ((t (:background "red" :foreground "black"))))
+ '(magit-diff-context-highlight ((t (:foreground "grey50"))))
+ '(magit-diff-hunk-heading-highlight ((t (:underline t))))
+ '(magit-diff-hunk-region ((t (:inherit bold :background "black"))))
+ '(magit-diff-lines-heading ((t (:background "LightSalmon3" :foreground "black"))))
+ '(magit-diff-removed ((t (:foreground "#aa2222"))))
+ '(magit-diff-removed-highlight ((t (:foreground "#aa2222"))))
+ '(magit-section-highlight ((t (:background "black"))))
+ '(mode-line ((t (:background "cyan" :inverse-video nil))))
+ '(region ((t (:background "white" :foreground "black")))))

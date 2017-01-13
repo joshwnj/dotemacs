@@ -70,7 +70,7 @@
   "Sub-mode for indentation"
   (interactive)
 
-  (popup-tip "indent" :nowait)
+  (popup-tip "\n indent \n" :nowait)
   (setq shorty-submode "indent"))
 
 (defun shorty-window ()
@@ -92,7 +92,6 @@
 (defun shorty-define-keys (map)
   ;; exit shorty-mode
   (define-key map (kbd "C-@") 'global-shorty-off)
-  (define-key map (kbd "TAB") 'global-shorty-off)
 
   ;; edit-mode
   (define-key map (kbd "e") 'quick-edit)
@@ -106,8 +105,19 @@
   (define-key map (kbd "c x") 'kill-region)
   (define-key map (kbd "c y") 'yank)
 
+  ;; clipboard (osx)
+  (define-key map (kbd "c o c") 'osx-copy)
+  (define-key map (kbd "c o v") 'simpleclip-paste)
+  (define-key map (kbd "c v") 'simpleclip-paste)
+  (define-key map (kbd "c o d") 'osx-get-cwd)
+  (define-key map (kbd "c o b") 'osx-get-file-basename)
+  (define-key map (kbd "c o p") 'osx-get-file-path)
+  (define-key map (kbd "c o r") 'osx-get-region-ref)
+
   ;; misc commands
-  (define-key map (kbd "x") 'smex)
+  (define-key map (kbd "x x") 'smex)
+  (define-key map (kbd "x e b") 'eval-buffer)
+  (define-key map (kbd "x i d") 'insert-date)
 
   ;; region
   (define-key map (kbd "r x") 'exchange-point-and-mark)
@@ -126,6 +136,7 @@
   (define-key map (kbd "]") 'shorty-submode-forward)
   
   ;; indentation
+  (define-key map (kbd "i o") 'indent-for-tab-command)
   (define-key map (kbd "i ]") 'indent-rigidly)
   (define-key map (kbd "i [") 'un-indent-rigidly)
 
@@ -144,6 +155,16 @@
   (define-key map (kbd "f g") 'ag)
   (define-key map (kbd "f r") 'ido-recentf-open)
   (define-key map (kbd "f p") 'find-file-at-point)
+
+  ;; line
+  (define-key map (kbd "g a") 'beginning-of-buffer)
+  (define-key map (kbd "g e") 'end-of-buffer)
+  (define-key map (kbd "g l") 'goto-line)
+
+  (define-key map (kbd "g .") 'next-error)
+  (define-key map (kbd "g ,") 'previous-error)
+  (define-key map (kbd "g m") 'forward-mark)
+  (define-key map (kbd "g n") 'backward-mark)
 
   ;; numbers
   (define-key map (kbd "+") 'shift-number-up)
@@ -197,7 +218,8 @@
 (defun global-shorty-on ()
   "Turn on Global shorty-mode."
   (interactive)
-  (global-shorty-mode 1))
+  (if (eq (active-minibuffer-window) nil)
+      (global-shorty-mode 1)))
 
 (defun global-shorty-off ()
   "Turn off Global shorty-mode."
@@ -216,25 +238,28 @@
   "Re-enable shorty-mode if it was temporarily disabled."
   (if (eq shorty-reenable-after-minibuffer t)
       (progn
-        (global-shorty-on))))
+        (global-shorty-mode 1))))
 
 ;; disable when we're in the minibuffer
 (add-hook 'minibuffer-setup-hook 'shorty-temp-disable)
 (add-hook 'minibuffer-exit-hook 'shorty-reenable)
 
 (defun shorty-visual-on ()
-  ;(global-hl-line-mode 1)
+  (global-hl-line-mode 1)
+
+  ;; (popup-tip "\n shorty on \n" :nowait)
   
   (custom-set-faces
-   '(mode-line ((t (:inverse-video t))))
+   '(mode-line ((t (:inverse-video nil :background "black"))))
    )
 )
 
 (defun shorty-visual-off ()
   (global-hl-line-mode -1)
- 
+
+    ;; (popup-tip "\n shorty off \n" :nowait)
   (custom-set-faces
-   '(mode-line ((t (:inverse-video nil))))
+   '(mode-line ((t (:inverse-video t))))
    )
 )
 
@@ -246,11 +271,11 @@
     (shorty-visual-off)))
 
 ;; enter shorty-mode when mark is activated
-(add-hook 'activate-mark-hook 'global-shorty-on)
+;(add-hook 'activate-mark-hook 'global-shorty-on)
 
 (add-hook 'shorty-mode-hook 'handle-shorty-mode-change)
 
-(global-set-key (kbd "TAB") 'global-shorty-on)
+(global-set-key (kbd "C-@") 'global-shorty-on)
 
 ;; reload keys once to start
 (shorty-reload-keys)
