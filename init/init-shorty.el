@@ -177,11 +177,11 @@
   ;; magit
   (define-key map (kbd "g i s") 'magit-status)
   (define-key map (kbd "g i l") 'magit-log)
-  
+
   ;; bookmarks
   (define-key map (kbd "b m") 'bookmark-set)
   (define-key map (kbd "b j") 'bookmark-jump)
-  
+
   ;; comments
   ;; (define-key map (kbd ";") 'comment-or-uncomment-region)
   (define-key map (kbd ";") (lambda (from to)
@@ -239,21 +239,10 @@
 
 (defun shorty-visual-on ()
   (global-hl-line-mode 1)
-
-  ;; (popup-tip "\n shorty on \n" :nowait)
-  
-  (custom-set-faces
-   '(mode-line ((t (:inverse-video nil :background "black"))))
-   )
 )
 
 (defun shorty-visual-off ()
   (global-hl-line-mode -1)
-
-    ;; (popup-tip "\n shorty off \n" :nowait)
-  (custom-set-faces
-   '(mode-line ((t (:inverse-video t))))
-   )
 )
 
 (defun handle-shorty-mode-change ()
@@ -262,9 +251,6 @@
   (if (eq shorty-mode t)
       (shorty-visual-on)
     (shorty-visual-off)))
-
-;; enter shorty-mode when mark is activated
-;(add-hook 'activate-mark-hook 'global-shorty-on)
 
 (add-hook 'shorty-mode-hook 'handle-shorty-mode-change)
 

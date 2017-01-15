@@ -97,7 +97,10 @@
  '(mode-line-in-non-selected-windows t)
  '(package-selected-packages
    (quote
-    (backward-forward shift-number expand-region thing-cmds editorconfig flatui-theme json-mode osx-trash bool-flip indent-guide magit magit-gh-pulls white-theme markdown-mode web-mode popup ag company smex projectile undo-tree use-package))))
+    (yaml-mode company-tern backward-forward shift-number expand-region thing-cmds editorconfig flatui-theme json-mode osx-trash bool-flip indent-guide magit magit-gh-pulls white-theme markdown-mode web-mode popup ag company smex projectile undo-tree use-package)))
+ '(whitespace-style
+   (quote
+    (face tabs trailing space-before-tab newline indentation space-after-tab space-mark tab-mark newline-mark))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -116,5 +119,12 @@
  '(magit-diff-removed ((t (:foreground "#aa2222"))))
  '(magit-diff-removed-highlight ((t (:foreground "#aa2222"))))
  '(magit-section-highlight ((t (:background "black"))))
- '(mode-line ((t (:background "cyan" :inverse-video nil))))
- '(region ((t (:background "white" :foreground "black")))))
+ '(mode-line ((t (:inverse-video nil :background "black"))))
+ '(region ((t (:background "white" :foreground "black"))))
+ '(whitespace-empty ((t (:background "black" :foreground "firebrick"))))
+ '(whitespace-indentation ((t (:foreground "cyan"))))
+ '(whitespace-space ((((class color) (background dark)) (:background "black" :foreground "yellow"))))
+ '(whitespace-space-after-tab ((t (:background "black" :foreground "firebrick"))))
+ '(whitespace-space-before-tab ((t (:background "black" :foreground "firebrick"))))
+ '(whitespace-tab ((((class color) (background light)) (:background "black" :foreground "cyan"))))
+ '(whitespace-trailing ((t (:background "black" :foreground "yellow" :underline t :weight bold)))))
