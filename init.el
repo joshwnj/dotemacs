@@ -55,6 +55,12 @@
 (require 'init-markdown)
 
 ;;;;
+;; util functions
+
+(require 'util-files)
+(require 'util-mark)
+
+;;;;
 ;; atomic chrome
 
 ;(require 'atomic-chrome)

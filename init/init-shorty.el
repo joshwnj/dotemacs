@@ -4,32 +4,6 @@
 
 (require 'popup)
 
-(defun mark-whole-line ()
-  (interactive)
-  (move-end-of-line nil)
-  (set-mark-command nil)
-  (move-beginning-of-line nil))
-
-(defun create-new-file (filename)
-  (interactive "F")
-  (find-file filename))
-
-(defun my-find-file (window-option)
-  (interactive "p")
-  (if (eq window-option 1)
-      (ido-find-file)
-    (ido-find-file-other-window)))
-
-(defun my-switch-buffer (window-option)
-  (interactive "p")
-  (if (eq window-option 1)
-      (ido-switch-buffer)
-    (ido-switch-buffer-other-window)))
-
-(defun switch-to-other-buffer ()
-  (interactive)
-  (switch-to-buffer (other-buffer (current-buffer) 1)))
-
 (defun quick-edit (text)
   "Insert some text (or replace, if there is an active region)"
   (interactive "sEdit:")
@@ -92,7 +66,7 @@
   ;; visual mark
   (define-key map (kbd "v") 'set-mark-command)
   (define-key map (kbd "C-v") 'set-mark-command)
-  
+
   ;; clipboard
   (define-key map (kbd "c c") 'kill-ring-save)
   (define-key map (kbd "c x") 'kill-region)
@@ -121,13 +95,13 @@
   (define-key map (kbd "r e") 'mark-enclosing-list)
   (define-key map (kbd "r l") 'mark-whole-line)
   (define-key map (kbd "r b") 'mark-whole-buffer)
-  
+
   ;; submodes
   (define-key map (kbd "i i") 'shorty-indent)
   (define-key map (kbd "w w") 'shorty-window)
   (define-key map (kbd "[") 'shorty-submode-backward)
   (define-key map (kbd "]") 'shorty-submode-forward)
-  
+
   ;; indentation
   (define-key map (kbd "i o") 'indent-for-tab-command)
   (define-key map (kbd "i ]") 'indent-rigidly)
@@ -141,7 +115,7 @@
   (define-key map (kbd "w 2") 'split-window-below)
   (define-key map (kbd "w 3") 'split-window-right)
   (define-key map (kbd "w 0") 'delete-window)
-  
+
   ;; file
   (define-key map (kbd "f c") 'create-new-file)
   (define-key map (kbd "f f") 'my-find-file)
@@ -183,7 +157,6 @@
   (define-key map (kbd "b j") 'bookmark-jump)
 
   ;; comments
-  ;; (define-key map (kbd ";") 'comment-or-uncomment-region)
   (define-key map (kbd ";") (lambda (from to)
                               (interactive "r")
                               (comment-or-uncomment-region from to)
