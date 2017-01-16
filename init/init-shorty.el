@@ -2,6 +2,12 @@
 ;;
 ;; custom shortcuts for modal editing
 
+;; todo
+;;
+;; - `3 r l`: mark 3 whole lines
+
+(require 'shorty-submode)
+
 (defun quick-edit (text)
   "Insert some text (or replace, if there is an active region)"
   (interactive "sEdit:")
@@ -48,6 +54,7 @@
   (define-key map (kbd "x i d") 'insert-date)
 
   ;; region
+  (define-key map (kbd "r r") 'activate-region)
   (define-key map (kbd "r x") 'exchange-point-and-mark)
   (define-key map (kbd "r p") 'mark-paragraph)
   (define-key map (kbd "r d") 'mark-defun)
