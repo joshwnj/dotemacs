@@ -2,50 +2,11 @@
 ;;
 ;; custom shortcuts for modal editing
 
-(require 'popup)
-
 (defun quick-edit (text)
   "Insert some text (or replace, if there is an active region)"
   (interactive "sEdit:")
   (when (region-active-p) (kill-region (region-beginning) (region-end)))
   (insert text))
-
-(defvar shorty-submode nil
-  "Submode")
-
-(defun shorty-submode-forward (amount)
-  (interactive "p")
-  (cond
-   ((equal shorty-submode "indent")
-    (indent-rigidly (region-beginning) (region-end) amount))
-   ((equal shorty-submode "window")
-    (let ((command 'winner-redo))
-      (setq this-command command)
-      (call-interactively command)))))
-
-(defun shorty-submode-backward (amount)
-  (interactive "p")
-  (cond
-   ((equal shorty-submode "indent")
-    (indent-rigidly (region-beginning) (region-end) (* -1 amount)))
-   ((equal shorty-submode "window")
-    (let ((command 'winner-undo))
-      (setq this-command command)
-      (call-interactively command)))))
-
-(defun shorty-indent ()
-  "Sub-mode for indentation"
-  (interactive)
-
-  (popup-tip "\n indent \n" :nowait)
-  (setq shorty-submode "indent"))
-
-(defun shorty-window ()
-  "Sub-mode for window nav"
-  (interactive)
-
-  (popup-tip "\n window \n" :nowait)
-  (setq shorty-submode "window"))
 
 (defvar shorty-reenable-after-minibuffer nil
   "Tell whether to reenable shorty-mode after exiting minibuffer.")
@@ -101,7 +62,7 @@
   (define-key map (kbd "w w") 'shorty-window)
   (define-key map (kbd "[") 'shorty-submode-backward)
   (define-key map (kbd "]") 'shorty-submode-forward)
-
+  
   ;; indentation
   (define-key map (kbd "i o") 'indent-for-tab-command)
   (define-key map (kbd "i ]") 'indent-rigidly)

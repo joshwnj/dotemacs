@@ -114,6 +114,7 @@
  ;; If there is more than one, they won't work right.
  '(cursor ((t nil)))
  '(hl-line ((t (:underline t))))
+ '(isearch ((t (:background "magenta4" :foreground "black"))))
  '(magit-diff-added ((t (:foreground "green"))))
  '(magit-diff-added-highlight ((t (:foreground "#22aa22"))))
  '(magit-diff-base ((t (:background "red" :foreground "black"))))
