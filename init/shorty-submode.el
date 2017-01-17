@@ -11,8 +11,6 @@
   (cond
    ((equal shorty-submode "indent")
     (indent-rigidly (region-beginning) (region-end) shorty-submode-amount))
-   ((equal shorty-submode "search")
-    (isearch-repeat-forward))
    ((equal shorty-submode "error")
     (next-error))
    ((equal shorty-submode "window")
@@ -25,8 +23,6 @@
   (cond
    ((equal shorty-submode "indent")
     (indent-rigidly (region-beginning) (region-end) (* -1 shorty-submode-amount)))
-   ((equal shorty-submode "search")
-    (isearch-repeat-backward))
    ((equal shorty-submode "error")
     (previous-error))
    ((equal shorty-submode "window")
@@ -49,27 +45,12 @@
   (popup-tip "\n window \n" :nowait)
   (setq shorty-submode "window"))
 
-(defun shorty-search ()
-  "Sub-mode for isearch nav"
-  (interactive)
-
-  (popup-tip "\n search \n" :nowait)
-  (setq shorty-submode "search"))
-
 (defun shorty-error ()
   "Sub-mode for error nav"
   (interactive)
 
   (popup-tip "\n error \n" :nowait)
   (setq shorty-submode "error"))
-
-;; when you do a search, automatically choose shorty-search submode
-(defun shorty-on-isearch ()
-  "Run when isearch mode starts"
-  (interactive)
-  (shorty-search))
-
-(add-hook 'isearch-mode-hook 'shorty-on-isearch)
 
 ;; when you get a compilation buffer, automatically choose shorty-error submode (for things like grep, lint, etc)
 (defun shorty-on-compilation-buffer ()
