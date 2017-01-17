@@ -29,6 +29,10 @@
   :init
   (winner-mode))
 
+(use-package editorconfig
+  :init
+  (editorconfig-mode))
+
 (require 'init-shorty)
 
 ;;;;
