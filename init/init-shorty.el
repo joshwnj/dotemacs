@@ -5,6 +5,7 @@
 ;; todo
 ;;
 ;; - `3 r l`: mark 3 whole lines
+;; - per-major-mode keymaps
 
 (require 'shorty-submode)
 
@@ -69,7 +70,7 @@
   (define-key map (kbd "w w") 'shorty-window)
   (define-key map (kbd "[") 'shorty-submode-backward)
   (define-key map (kbd "]") 'shorty-submode-forward)
-  
+
   ;; indentation
   (define-key map (kbd "i o") 'indent-for-tab-command)
   (define-key map (kbd "i ]") 'indent-rigidly)
@@ -111,6 +112,9 @@
   (define-key map (kbd "b s") 'save-buffer)
   (define-key map (kbd "b o") 'switch-to-other-buffer)
   (define-key map (kbd "b r") 'revert-buffer)
+
+  ;; search within a buffer
+  (define-key map (kbd "s o") 'occur)
 
   ;; dired
   (define-key map (kbd "d d") 'dired-jump)
