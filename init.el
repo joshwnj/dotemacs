@@ -45,6 +45,7 @@
 
 (require 'init-autocomplete)
 (require 'init-backups)
+(require 'init-compilation)
 (require 'init-datetime)
 (require 'init-linum)
 (require 'init-osx)
