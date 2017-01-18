@@ -106,6 +106,14 @@
   (define-key map (kbd "+") 'shift-number-up)
   (define-key map (kbd "_") 'shift-number-down)
 
+  ;; projectile
+  (define-key map (kbd "p g") 'projectile-ag)
+  (define-key map (kbd "p f") 'projectile-find-file)
+  (define-key map (kbd "p d") 'projectile-find-dir)
+  (define-key map (kbd "p s") 'projectile-switch-project)
+  (define-key map (kbd "p b") 'projectile-ibuffer)
+  (define-key map (kbd "p k") 'projectile-kill-buffers)
+
   ;; buffers
   (define-key map (kbd "b b") 'my-switch-buffer)
   (define-key map (kbd "b k") 'kill-this-buffer)
