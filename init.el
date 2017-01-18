@@ -51,6 +51,7 @@
 (require 'init-osx)
 (require 'init-ido)
 (require 'init-shell)
+(require 'init-snippets)
 (require 'init-text)
 
 ;;;;
