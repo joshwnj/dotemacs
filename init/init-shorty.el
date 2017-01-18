@@ -157,7 +157,10 @@
 (defun shorty-on ()
   "Turn on shorty-mode."
   (interactive)
-  (shorty-mode 1))
+
+  (when (not (memq major-mode
+               (list 'dired-mode 'package-menu-mode 'magit-status-mode)))
+    (shorty-mode 1)))
 
 (define-globalized-minor-mode global-shorty-mode shorty-mode shorty-on)
 
