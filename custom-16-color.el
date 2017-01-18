@@ -3,6 +3,12 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(company-echo-common ((t (:background "green" :foreground "black"))))
+ '(company-preview-search ((t (:background "black"))))
+ '(company-scrollbar-bg ((t (:background "black"))))
+ '(company-scrollbar-fg ((t (:background "white"))))
+ '(company-tooltip ((t (:background "cyan" :foreground "black"))))
+ '(company-tooltip-common ((t (:underline t))))
  '(cursor ((t nil)))
  '(hl-line ((t (:underline t))))
  '(isearch ((t (:background "magenta4" :foreground "black"))))
@@ -18,6 +24,7 @@
  '(magit-diff-removed-highlight ((t (:foreground "#aa2222"))))
  '(magit-section-highlight ((t (:background "black"))))
  '(mode-line ((t (:inverse-video nil :background "black"))))
+ '(mode-line-inactive ((t (:foreground "white" :overline t :underline t))))
  '(next-error ((t (:background "red" :foreground "black"))))
  '(region ((t (:background "white" :foreground "black"))))
  '(whitespace-empty ((t (:background "black" :foreground "firebrick"))))
@@ -27,3 +34,25 @@
  '(whitespace-space-before-tab ((t (:background "black" :foreground "firebrick"))))
  '(whitespace-tab ((((class color) (background light)) (:background "black" :foreground "cyan"))))
  '(whitespace-trailing ((t (:background "black" :foreground "yellow" :underline t :weight bold)))))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(auto-save-file-name-transforms (quote ((".*" "~/.emacs_autosaves/\\1" t))))
+ '(backup-directory-alist (quote ((".*" . "~/.emacs_backups/"))))
+ '(custom-safe-themes
+    (quote
+      ("a2dd771a05705be2a6e6adb6ddbc7a27ebf49edab1dffdbefe243096becba7c9" "15348febfa2266c4def59a08ef2846f6032c0797f001d7b9148f30ace0d08bcf" default)))
+ '(mode-line-format
+    (quote
+      ("%e" " " mode-line-modified " " mode-line-buffer-identification " | " mode-name " "
+        (vc-mode vc-mode)
+        " | " minor-mode-alist)))
+ '(mode-line-in-non-selected-windows t)
+ '(package-selected-packages
+    (quote
+      (yasnippet ioccur show-marks vkill vmd-mode yaml-mode company-tern backward-forward shift-number expand-region thing-cmds editorconfig flatui-theme json-mode osx-trash bool-flip indent-guide magit magit-gh-pulls white-theme markdown-mode web-mode popup ag company smex projectile undo-tree use-package)))
+ '(whitespace-style
+    (quote
+      (face tabs trailing space-before-tab newline indentation space-after-tab space-mark tab-mark newline-mark))))
