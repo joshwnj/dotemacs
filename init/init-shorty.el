@@ -102,6 +102,12 @@
   (define-key map (kbd "g m") 'forward-mark)
   (define-key map (kbd "g n") 'backward-mark)
 
+  ;; hide/show
+  (define-key map (kbd "h n") 'linum-mode)
+  (define-key map (kbd "h w") 'whitespace-mode)
+  (define-key map (kbd "h m") 'mode-line-terse)
+  (define-key map (kbd "h n") 'mode-line-verbose)
+
   ;; numbers
   (define-key map (kbd "+") 'shift-number-up)
   (define-key map (kbd "_") 'shift-number-down)
