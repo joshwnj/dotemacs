@@ -52,6 +52,7 @@
   ;; misc commands
   (define-key map (kbd "x x") 'smex)
   (define-key map (kbd "x e b") 'eval-buffer)
+  (define-key map (kbd "x e s") 'eval-last-sexp)
   (define-key map (kbd "x i d") 'insert-date)
 
   ;; region

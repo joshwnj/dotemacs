@@ -11,7 +11,8 @@
  '(company-tooltip-common ((t (:underline t))))
  '(cursor ((t nil)))
  '(hl-line ((t (:underline t))))
- '(isearch ((t (:background "magenta4" :foreground "black"))))
+ '(isearch ((t (:background "magenta4" :foreground "black" :weight normal))))
+ '(isearch-fail ((t (:background "red" :foreground "black"))))
  '(magit-diff-added ((t (:foreground "green"))))
  '(magit-diff-added-highlight ((t (:foreground "#22aa22"))))
  '(magit-diff-base ((t (:background "red" :foreground "black"))))
@@ -52,7 +53,7 @@
  '(mode-line-in-non-selected-windows t)
  '(package-selected-packages
     (quote
-      (yasnippet ioccur show-marks vkill vmd-mode yaml-mode company-tern backward-forward shift-number expand-region thing-cmds editorconfig flatui-theme json-mode osx-trash bool-flip indent-guide magit magit-gh-pulls white-theme markdown-mode web-mode popup ag company smex projectile undo-tree use-package)))
+      (rotate easy-kill yasnippet ioccur show-marks vkill vmd-mode yaml-mode company-tern backward-forward shift-number expand-region thing-cmds editorconfig flatui-theme json-mode osx-trash bool-flip indent-guide magit magit-gh-pulls white-theme markdown-mode web-mode popup ag company smex projectile undo-tree use-package)))
  '(whitespace-style
     (quote
       (face tabs trailing space-before-tab newline indentation space-after-tab space-mark tab-mark newline-mark))))
