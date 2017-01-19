@@ -84,6 +84,10 @@
   (define-key map (kbd "w 2") 'split-window-below)
   (define-key map (kbd "w 3") 'split-window-right)
   (define-key map (kbd "w 0") 'delete-window)
+  (define-key map (kbd "w r") 'rotate-window)
+  (define-key map (kbd "w b") 'balance-windows)
+  (define-key map (kbd "w h") 'resize-window-h)
+  (define-key map (kbd "w v") 'resize-window-v)
 
   ;; file
   (define-key map (kbd "f c") 'create-new-file)

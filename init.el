@@ -53,6 +53,7 @@
 (require 'init-shell)
 (require 'init-snippets)
 (require 'init-text)
+(require 'init-window)
 
 ;;;;
 ;; Major modes
