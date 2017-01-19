@@ -48,6 +48,7 @@
 (require 'init-compilation)
 (require 'init-datetime)
 (require 'init-linum)
+(require 'init-modeline)
 (require 'init-osx)
 (require 'init-ido)
 (require 'init-shell)
