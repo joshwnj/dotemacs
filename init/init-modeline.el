@@ -12,3 +12,5 @@
     (quote
       ("%e" " " mode-line-modified " " mode-line-buffer-identification " (" mode-name ") "
         (vc-mode vc-mode)))))
+
+(provide 'init-modeline)
