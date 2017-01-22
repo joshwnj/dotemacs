@@ -147,6 +147,12 @@
   (define-key map (kbd "b m") 'bookmark-set)
   (define-key map (kbd "b j") 'bookmark-jump)
 
+  ;; shell (terminal)
+  (define-key map (kbd "t t") 'bshell-switch)
+  (define-key map (kbd "t l") 'bshell-list)
+  (define-key map (kbd "t r") 'bshell-rename)
+  (define-key map (kbd "t n") 'bshell-new)
+
   ;; comments
   (define-key map (kbd ";") (lambda (from to)
                               (interactive "r")

@@ -53,7 +53,7 @@
  '(mode-line-in-non-selected-windows t)
  '(package-selected-packages
     (quote
-      (rotate easy-kill yasnippet ioccur show-marks vkill vmd-mode yaml-mode company-tern backward-forward shift-number expand-region thing-cmds editorconfig flatui-theme json-mode osx-trash bool-flip indent-guide magit magit-gh-pulls white-theme markdown-mode web-mode popup ag company smex projectile undo-tree use-package)))
+      (ripgrep bshell rotate easy-kill yasnippet ioccur show-marks vkill vmd-mode yaml-mode company-tern backward-forward shift-number expand-region thing-cmds editorconfig flatui-theme json-mode osx-trash bool-flip indent-guide magit magit-gh-pulls white-theme markdown-mode web-mode popup ag company smex projectile undo-tree use-package)))
  '(whitespace-style
     (quote
       (face tabs trailing space-before-tab newline indentation space-after-tab space-mark tab-mark newline-mark))))

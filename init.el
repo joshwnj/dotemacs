@@ -33,6 +33,8 @@
   :init
   (editorconfig-mode))
 
+(require 'bshell)
+
 (require 'init-shorty)
 
 ;;;;
