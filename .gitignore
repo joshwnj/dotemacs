@@ -1,5 +1,6 @@
 *.elc
 *.eld
+.cask
 ac-comphist.dat
 auto-save-list
 bookmarks
