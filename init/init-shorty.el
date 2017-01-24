@@ -55,6 +55,14 @@
   (define-key map (kbd "x e s") 'eval-last-sexp)
   (define-key map (kbd "x i d") 'insert-date)
 
+  ;; modes
+  (define-key map (kbd "x m c") 'css-mode)
+  (define-key map (kbd "x m e") 'emacs-lisp-mode)
+  (define-key map (kbd "x m h") 'sgml-mode)
+  (define-key map (kbd "x m j") 'js-mode)
+  (define-key map (kbd "x m m") 'markdown-mode)
+  (define-key map (kbd "x m w") 'web-mode)
+
   ;; region
   (define-key map (kbd "r r") 'activate-region)
   (define-key map (kbd "r x") 'exchange-point-and-mark)
