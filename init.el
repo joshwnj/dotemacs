@@ -50,13 +50,15 @@
 (require 'init-compilation)
 (require 'init-datetime)
 (require 'init-linum)
-(require 'init-modeline)
 (require 'init-osx)
 (require 'init-ido)
 (require 'init-shell)
 (require 'init-snippets)
 (require 'init-text)
 (require 'init-window)
+
+(require 'init-modeline)
+(mode-line-terse)
 
 ;;;;
 ;; Major modes
