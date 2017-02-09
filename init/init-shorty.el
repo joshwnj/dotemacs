@@ -156,10 +156,14 @@
   (define-key map (kbd "b j") 'bookmark-jump)
 
   ;; shell (terminal)
-  (define-key map (kbd "t t") 'bshell-switch)
+  (define-key map (kbd "t o") 'bshell-switch)
   (define-key map (kbd "t l") 'bshell-list)
   (define-key map (kbd "t r") 'bshell-rename)
   (define-key map (kbd "t n") 'bshell-new)
+  (define-key map (kbd "t t") (lambda ()
+                                (interactive)
+                                (let ((current-prefix-arg 4))
+                                  (call-interactively 'bshell-switch))))
 
   ;; comments
   (define-key map (kbd ";") (lambda (from to)
