@@ -10,7 +10,6 @@
   (interactive)
   (setq-default mode-line-format
     (quote
-      ("%e " mode-line-modified " " mode-line-buffer-identification " (" mode-name (:eval (if shorty-mode (concat " | " (propertize "SHORTY" 'face 'font-lock-warning-face)))) ") "
-        (vc-mode vc-mode)))))
+      ("%e " mode-line-modified " " (:eval (if shorty-mode (propertize "%12b" 'face 'font-lock-warning-face) mode-line-buffer-identification)) " (" mode-name ") " (vc-mode vc-mode)))))
 
 (provide 'init-modeline)
