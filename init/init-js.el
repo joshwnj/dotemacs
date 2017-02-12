@@ -2,30 +2,27 @@
   :init
   (progn
     (require 'flycheck)
-    (add-hook 'js-mode-hook
-              (lambda () (flycheck-mode t)))))
+
+    ;; disable jshint in favour of eslint
+    (setq-default flycheck-disabled-checkers
+      (append flycheck-disabled-checkers
+        '(javascript-jscs)
+        '(javascript-jshint)))
+
+    ;; use eslint with web-mode for jsx files
+    (flycheck-add-mode 'javascript-eslint 'web-mode)
+    (flycheck-add-mode 'javascript-eslint 'js-mode)
+
+    ;; disable json-jsonlist checking for json files
+    (setq-default flycheck-disabled-checkers
+      (append flycheck-disabled-checkers
+        '(json-jsonlist)))
+    ))
 
 (use-package web-mode
   :init
   (progn
-    (require 'flycheck)
-    (add-hook 'web-mode-hook
-      (lambda () (flycheck-mode t)))
     (add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))))
-
-;; disable jshint in favour of eslint
-(setq-default flycheck-disabled-checkers
-  (append flycheck-disabled-checkers
-    '(javascript-jshint)))
-
-;; use eslint with web-mode for jsx files
-(flycheck-add-mode 'javascript-eslint 'web-mode)
-(flycheck-add-mode 'javascript-eslint 'js-mode)
-
-;; disable json-jsonlist checking for json files
-(setq-default flycheck-disabled-checkers
-  (append flycheck-disabled-checkers
-    '(json-jsonlist)))
 
 (defun send-region-or-line-to-nodejs-repl-process ()
   "Send the current line to `nodejs-repl' process."
@@ -45,7 +42,6 @@
 
 (defun my-js-hook-function ()
   (progn
-
     (add-to-list 'compilation-error-regexp-alist 'node-stack-trace)
     (add-to-list 'compilation-error-regexp-alist-alist
       '(node-stack-trace "^ +at[:]* [^(]+(\\(.+\\):\\(.+\\):\\(.+\\))" 1 2 3))

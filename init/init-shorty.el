@@ -54,6 +54,7 @@
   (define-key map (kbd "x e b") 'eval-buffer)
   (define-key map (kbd "x e s") 'eval-last-sexp)
   (define-key map (kbd "x i d") 'insert-date)
+  (define-key map (kbd "x f c") 'flycheck-mode)
 
   ;; modes
   (define-key map (kbd "x m c") 'css-mode)
