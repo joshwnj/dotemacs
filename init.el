@@ -63,7 +63,7 @@
 ;;;;
 ;; Major modes
 
-;(require 'init-js)
+(require 'init-js)
 (require 'init-markdown)
 
 ;;;;
@@ -100,11 +100,6 @@
  '(custom-safe-themes
     (quote
       ("a2dd771a05705be2a6e6adb6ddbc7a27ebf49edab1dffdbefe243096becba7c9" "15348febfa2266c4def59a08ef2846f6032c0797f001d7b9148f30ace0d08bcf" default)))
- '(mode-line-format
-    (quote
-      ("%e" " " mode-line-modified " " mode-line-buffer-identification " | " mode-name " "
-        (vc-mode vc-mode)
-        " | " minor-mode-alist)))
  '(mode-line-in-non-selected-windows t)
  '(package-selected-packages
     (quote

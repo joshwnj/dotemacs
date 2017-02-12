@@ -24,6 +24,8 @@
  '(magit-diff-removed ((t (:foreground "#aa2222"))))
  '(magit-diff-removed-highlight ((t (:foreground "#aa2222"))))
  '(magit-section-highlight ((t (:background "black"))))
+ '(markdown-header-face-1 ((t (:inherit markdown-header-face :foreground "green" :height 1.0))))
+ '(markdown-header-face-3 ((t (:inherit markdown-header-face :foreground "magenta" :height 1.0))))
  '(mode-line ((t (:inverse-video nil :background "black"))))
  '(mode-line-inactive ((t (:foreground "white" :overline t :underline t))))
  '(next-error ((t (:background "red" :foreground "black"))))
@@ -45,15 +47,11 @@
  '(custom-safe-themes
     (quote
       ("a2dd771a05705be2a6e6adb6ddbc7a27ebf49edab1dffdbefe243096becba7c9" "15348febfa2266c4def59a08ef2846f6032c0797f001d7b9148f30ace0d08bcf" default)))
- '(mode-line-format
-    (quote
-      ("%e" " " mode-line-modified " " mode-line-buffer-identification " | " mode-name " "
-        (vc-mode vc-mode)
-        " | " minor-mode-alist)))
  '(mode-line-in-non-selected-windows t)
  '(package-selected-packages
     (quote
-      (ripgrep bshell rotate easy-kill yasnippet ioccur show-marks vkill vmd-mode yaml-mode company-tern backward-forward shift-number expand-region thing-cmds editorconfig flatui-theme json-mode osx-trash bool-flip indent-guide magit magit-gh-pulls white-theme markdown-mode web-mode popup ag company smex projectile undo-tree use-package)))
+      (flycheck ripgrep bshell rotate easy-kill yasnippet ioccur show-marks vkill vmd-mode yaml-mode company-tern backward-forward shift-number expand-region thing-cmds editorconfig flatui-theme json-mode osx-trash bool-flip indent-guide magit magit-gh-pulls white-theme markdown-mode web-mode popup ag company smex projectile undo-tree use-package)))
  '(whitespace-style
     (quote
-      (face tabs trailing space-before-tab newline indentation space-after-tab space-mark tab-mark newline-mark))))
+      (face tabs trailing space-before-tab newline indentation space-after-tab space-mark tab-mark newline-mark)))
+ '(yas-snippet-dirs (quote ("/Users/josh/.emacs.d/snippets"))))
