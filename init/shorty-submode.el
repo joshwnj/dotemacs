@@ -49,7 +49,8 @@
   "Sub-mode for error nav"
   (interactive)
 
-  (popup-tip "\n error \n" :nowait)
+  (if (not (equal shorty-submode "error"))
+    (popup-tip "\n compilation \n" :nowait))
   (setq shorty-submode "error"))
 
 ;; when you get a compilation buffer, automatically choose shorty-error submode (for things like grep, lint, etc)
