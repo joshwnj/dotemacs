@@ -13,7 +13,8 @@
   "Insert some text (or replace, if there is an active region)"
   (interactive "sEdit:")
   (when (region-active-p) (kill-region (region-beginning) (region-end)))
-  (insert text))
+  (insert text)
+  (activate-region))
 
 (defvar shorty-reenable-after-minibuffer nil
   "Tell whether to reenable shorty-mode after exiting minibuffer.")
@@ -63,6 +64,7 @@
   (define-key map (kbd "x m j") 'js-mode)
   (define-key map (kbd "x m m") 'markdown-mode)
   (define-key map (kbd "x m w") 'web-mode)
+  (define-key map (kbd "x m f") 'flow-mode)
 
   ;; region
   (define-key map (kbd "r r") 'activate-region)
