@@ -65,6 +65,7 @@
 
 (require 'init-js)
 (require 'init-markdown)
+(require 'init-reason)
 
 ;;;;
 ;; util functions
