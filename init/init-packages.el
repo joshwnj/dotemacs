@@ -7,27 +7,27 @@
 
 (defvar required-packages
   '(
-    expand-region
-    thing-cmds
-    editorconfig
-    flatui-theme
-    json-mode
-    osx-trash
-    bool-flip
-    indent-guide
-    magit
-    magit-gh-pulls
-    white-theme
-    markdown-mode
-    web-mode
-    popup
-    ag
-    company
-    smex
-    projectile
-    undo-tree
-    use-package
-    ) "A list of packages to install.")
+     ag
+     bool-flip
+     bshell
+     company
+     editorconfig
+     expand-region
+     flycheck
+     json-mode
+     magit
+     magit-gh-pulls
+     markdown-mode
+     osx-trash
+     popup
+     projectile
+     shift-number
+     smex
+     undo-tree
+     use-package
+     web-mode
+     yasnippet
+     ) "A list of packages to install.")
 
 (defun install-required-packages ()
   "Install all packages"
