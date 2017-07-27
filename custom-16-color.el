@@ -12,7 +12,7 @@
  '(cursor ((t nil)))
  '(font-lock-comment-delimiter-face ((t (:inherit font-lock-comment-face))))
  '(font-lock-comment-face ((t (:foreground "red"))))
- '(hl-line ((t (:underline t))))
+ '(hl-line ((t (:background "black"))))
  '(isearch ((t (:background "magenta4" :foreground "black" :weight normal))))
  '(isearch-fail ((t (:background "red" :foreground "black"))))
  '(magit-diff-added ((t (:foreground "green"))))
