@@ -10,6 +10,8 @@
  '(company-tooltip ((t (:background "cyan" :foreground "black"))))
  '(company-tooltip-common ((t (:underline t))))
  '(cursor ((t nil)))
+ '(font-lock-comment-delimiter-face ((t (:inherit font-lock-comment-face))))
+ '(font-lock-comment-face ((t (:foreground "red"))))
  '(hl-line ((t (:underline t))))
  '(isearch ((t (:background "magenta4" :foreground "black" :weight normal))))
  '(isearch-fail ((t (:background "red" :foreground "black"))))
@@ -47,10 +49,11 @@
  '(custom-safe-themes
     (quote
       ("a2dd771a05705be2a6e6adb6ddbc7a27ebf49edab1dffdbefe243096becba7c9" "15348febfa2266c4def59a08ef2846f6032c0797f001d7b9148f30ace0d08bcf" default)))
+ '(json-mode-auto-mode-list (quote (".babelrc" ".bowerrc")))
  '(mode-line-in-non-selected-windows t)
  '(package-selected-packages
     (quote
-      (flow-mode flycheck ripgrep bshell rotate easy-kill yasnippet ioccur show-marks vkill vmd-mode yaml-mode company-tern backward-forward shift-number expand-region thing-cmds editorconfig flatui-theme json-mode osx-trash bool-flip indent-guide magit magit-gh-pulls white-theme markdown-mode web-mode popup ag company smex projectile undo-tree use-package)))
+      (world-time-mode tuareg ghub+ docker dockerfile-mode flycheck-flow company-flow flow-minor-mode indium typescript-mode literal-string flow-mode flycheck ripgrep bshell rotate easy-kill yasnippet ioccur show-marks vkill vmd-mode yaml-mode company-tern backward-forward shift-number expand-region thing-cmds editorconfig flatui-theme json-mode osx-trash bool-flip indent-guide magit magit-gh-pulls white-theme markdown-mode web-mode popup ag company smex projectile undo-tree use-package)))
  '(whitespace-style
     (quote
       (face tabs trailing space-before-tab newline indentation space-after-tab space-mark tab-mark newline-mark)))
