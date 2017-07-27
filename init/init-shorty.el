@@ -29,12 +29,20 @@
   ;; exit shorty-mode
   (define-key map (kbd "C-@") 'global-shorty-off)
 
-  ;; edit-mode
-  (define-key map (kbd "e") 'quick-edit)
+  ;; numbers
+  (define-key map (kbd "+") 'shift-number-up)
+  (define-key map (kbd "_") 'shift-number-down)
 
-  ;; visual mark
-  (define-key map (kbd "v") 'set-mark-command)
-  (define-key map (kbd "C-v") 'set-mark-command)
+  ;; buffers
+  (define-key map (kbd "b b") 'my-switch-buffer)
+  (define-key map (kbd "b k") 'kill-this-buffer)
+  (define-key map (kbd "b s") 'save-buffer)
+  (define-key map (kbd "b o") 'switch-to-other-buffer)
+  (define-key map (kbd "b r") 'revert-buffer)
+
+  ;; bookmarks
+  (define-key map (kbd "b m") 'bookmark-set)
+  (define-key map (kbd "b j") 'bookmark-jump)
 
   ;; clipboard
   (define-key map (kbd "c c") 'kill-ring-save)
@@ -49,6 +57,100 @@
   (define-key map (kbd "c o b") 'osx-get-file-basename)
   (define-key map (kbd "c o p") 'osx-get-file-path)
   (define-key map (kbd "c o r") 'osx-get-region-ref)
+
+  ;; dired
+  (define-key map (kbd "d d") 'dired-jump)
+  (define-key map (kbd "d o") 'dired-jump-other-window)
+
+  ;; edit-mode
+  (define-key map (kbd "e") 'quick-edit)
+
+  ;; file
+  (define-key map (kbd "f c") 'create-new-file)
+  (define-key map (kbd "f f") 'my-find-file)
+  (define-key map (kbd "f g") 'ag)
+  (define-key map (kbd "f r") 'ido-recentf-open)
+  (define-key map (kbd "f p") 'find-file-at-point)
+
+  ;; magit
+  (define-key map (kbd "g i s") 'magit-status)
+  (define-key map (kbd "g i l") 'magit-log)
+
+  ;; line
+  (define-key map (kbd "g a") 'beginning-of-buffer)
+  (define-key map (kbd "g e") 'end-of-buffer)
+  (define-key map (kbd "g l") 'goto-line)
+
+  (define-key map (kbd "g .") 'next-error)
+  (define-key map (kbd "g ,") 'previous-error)
+  (define-key map (kbd "g m") 'forward-mark)
+  (define-key map (kbd "g n") 'backward-mark)
+
+  ;; hide/show
+  (define-key map (kbd "h l") 'linum-mode)
+  (define-key map (kbd "h w") 'whitespace-mode)
+  (define-key map (kbd "h m") 'mode-line-terse)
+  (define-key map (kbd "h n") 'mode-line-verbose)
+
+  ;; submodes
+  (define-key map (kbd "i i") 'shorty-indent)
+  (define-key map (kbd "w w") 'shorty-window)
+  (define-key map (kbd "[") 'shorty-submode-backward)
+  (define-key map (kbd "]") 'shorty-submode-forward)
+
+  ;; indentation
+  (define-key map (kbd "i o") 'indent-for-tab-command)
+  (define-key map (kbd "i ]") 'indent-rigidly)
+  (define-key map (kbd "i [") 'un-indent-rigidly)
+
+  ;; projectile
+  (define-key map (kbd "p g") 'projectile-ag)
+  (define-key map (kbd "p f") 'projectile-find-file)
+  (define-key map (kbd "p d") 'projectile-find-dir)
+  (define-key map (kbd "p p") 'projectile-switch-project)
+  (define-key map (kbd "p b") 'projectile-ibuffer)
+  (define-key map (kbd "p k") 'projectile-kill-buffers)
+
+  ;; region
+  (define-key map (kbd "r r") 'activate-region)
+  (define-key map (kbd "r x") 'exchange-point-and-mark)
+  (define-key map (kbd "r p") 'mark-paragraph)
+  (define-key map (kbd "r d") 'mark-defun)
+  (define-key map (kbd "r w") 'mark-word)
+  (define-key map (kbd "r s") 'mark-sexp)
+  (define-key map (kbd "r e") 'mark-enclosing-list)
+  (define-key map (kbd "r l") 'mark-whole-line)
+  (define-key map (kbd "r b") 'mark-whole-buffer)
+
+  ;; search within a buffer
+  (define-key map (kbd "s o") 'occur)
+
+  ;; shell (terminal)
+  (define-key map (kbd "t o") 'bshell-switch)
+  (define-key map (kbd "t l") 'bshell-list)
+  (define-key map (kbd "t r") 'bshell-rename)
+  (define-key map (kbd "t n") 'bshell-new)
+  (define-key map (kbd "t t") (lambda ()
+                                (interactive)
+                                (let ((current-prefix-arg 4))
+                                  (call-interactively 'bshell-switch))))
+
+  ;; visual mark
+  (define-key map (kbd "v") 'set-mark-command)
+  (define-key map (kbd "C-v") 'set-mark-command)
+
+  ;; window navigation
+  (define-key map (kbd "w [") 'winner-undo)
+  (define-key map (kbd "w ]") 'winner-redo)
+  (define-key map (kbd "w o") 'other-window)
+  (define-key map (kbd "w 1") 'delete-other-windows)
+  (define-key map (kbd "w 2") 'split-window-below)
+  (define-key map (kbd "w 3") 'split-window-right)
+  (define-key map (kbd "w 0") 'delete-window)
+  (define-key map (kbd "w r") 'rotate-window)
+  (define-key map (kbd "w b") 'balance-windows)
+  (define-key map (kbd "w h") 'resize-window-h)
+  (define-key map (kbd "w v") 'resize-window-v)
 
   ;; misc commands
   (define-key map (kbd "x x") 'smex)
@@ -65,108 +167,6 @@
   (define-key map (kbd "x m m") 'markdown-mode)
   (define-key map (kbd "x m w") 'web-mode)
   (define-key map (kbd "x m f") 'flow-mode)
-
-  ;; region
-  (define-key map (kbd "r r") 'activate-region)
-  (define-key map (kbd "r x") 'exchange-point-and-mark)
-  (define-key map (kbd "r p") 'mark-paragraph)
-  (define-key map (kbd "r d") 'mark-defun)
-  (define-key map (kbd "r w") 'mark-word)
-  (define-key map (kbd "r s") 'mark-sexp)
-  (define-key map (kbd "r e") 'mark-enclosing-list)
-  (define-key map (kbd "r l") 'mark-whole-line)
-  (define-key map (kbd "r b") 'mark-whole-buffer)
-
-  ;; submodes
-  (define-key map (kbd "i i") 'shorty-indent)
-  (define-key map (kbd "w w") 'shorty-window)
-  (define-key map (kbd "[") 'shorty-submode-backward)
-  (define-key map (kbd "]") 'shorty-submode-forward)
-
-  ;; indentation
-  (define-key map (kbd "i o") 'indent-for-tab-command)
-  (define-key map (kbd "i ]") 'indent-rigidly)
-  (define-key map (kbd "i [") 'un-indent-rigidly)
-
-  ;; window navigation
-  (define-key map (kbd "w [") 'winner-undo)
-  (define-key map (kbd "w ]") 'winner-redo)
-  (define-key map (kbd "w o") 'other-window)
-  (define-key map (kbd "w 1") 'delete-other-windows)
-  (define-key map (kbd "w 2") 'split-window-below)
-  (define-key map (kbd "w 3") 'split-window-right)
-  (define-key map (kbd "w 0") 'delete-window)
-  (define-key map (kbd "w r") 'rotate-window)
-  (define-key map (kbd "w b") 'balance-windows)
-  (define-key map (kbd "w h") 'resize-window-h)
-  (define-key map (kbd "w v") 'resize-window-v)
-
-  ;; file
-  (define-key map (kbd "f c") 'create-new-file)
-  (define-key map (kbd "f f") 'my-find-file)
-  (define-key map (kbd "f g") 'ag)
-  (define-key map (kbd "f r") 'ido-recentf-open)
-  (define-key map (kbd "f p") 'find-file-at-point)
-
-  ;; line
-  (define-key map (kbd "g a") 'beginning-of-buffer)
-  (define-key map (kbd "g e") 'end-of-buffer)
-  (define-key map (kbd "g l") 'goto-line)
-
-  (define-key map (kbd "g .") 'next-error)
-  (define-key map (kbd "g ,") 'previous-error)
-  (define-key map (kbd "g m") 'forward-mark)
-  (define-key map (kbd "g n") 'backward-mark)
-
-  ;; hide/show
-  (define-key map (kbd "h n") 'linum-mode)
-  (define-key map (kbd "h w") 'whitespace-mode)
-  (define-key map (kbd "h m") 'mode-line-terse)
-  (define-key map (kbd "h n") 'mode-line-verbose)
-
-  ;; numbers
-  (define-key map (kbd "+") 'shift-number-up)
-  (define-key map (kbd "_") 'shift-number-down)
-
-  ;; projectile
-  (define-key map (kbd "p g") 'projectile-ag)
-  (define-key map (kbd "p f") 'projectile-find-file)
-  (define-key map (kbd "p d") 'projectile-find-dir)
-  (define-key map (kbd "p p") 'projectile-switch-project)
-  (define-key map (kbd "p b") 'projectile-ibuffer)
-  (define-key map (kbd "p k") 'projectile-kill-buffers)
-
-  ;; buffers
-  (define-key map (kbd "b b") 'my-switch-buffer)
-  (define-key map (kbd "b k") 'kill-this-buffer)
-  (define-key map (kbd "b s") 'save-buffer)
-  (define-key map (kbd "b o") 'switch-to-other-buffer)
-  (define-key map (kbd "b r") 'revert-buffer)
-
-  ;; search within a buffer
-  (define-key map (kbd "s o") 'occur)
-
-  ;; dired
-  (define-key map (kbd "d d") 'dired-jump)
-  (define-key map (kbd "d o") 'dired-jump-other-window)
-
-  ;; magit
-  (define-key map (kbd "g i s") 'magit-status)
-  (define-key map (kbd "g i l") 'magit-log)
-
-  ;; bookmarks
-  (define-key map (kbd "b m") 'bookmark-set)
-  (define-key map (kbd "b j") 'bookmark-jump)
-
-  ;; shell (terminal)
-  (define-key map (kbd "t o") 'bshell-switch)
-  (define-key map (kbd "t l") 'bshell-list)
-  (define-key map (kbd "t r") 'bshell-rename)
-  (define-key map (kbd "t n") 'bshell-new)
-  (define-key map (kbd "t t") (lambda ()
-                                (interactive)
-                                (let ((current-prefix-arg 4))
-                                  (call-interactively 'bshell-switch))))
 
   ;; comments
   (define-key map (kbd ";") (lambda (from to)
