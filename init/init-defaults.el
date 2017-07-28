@@ -93,6 +93,11 @@
     scroll-up-aggressively 0.01
     scroll-down-aggressively 0.01)
 
+;; mouse wheel scrolling
+
+(global-set-key [mouse-4] 'scroll-down-line)
+(global-set-key [mouse-5] 'scroll-up-line)
+
 ;;;;
 
 (provide 'init-defaults)
