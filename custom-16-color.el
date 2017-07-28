@@ -49,6 +49,7 @@
  '(custom-safe-themes
     (quote
       ("a2dd771a05705be2a6e6adb6ddbc7a27ebf49edab1dffdbefe243096becba7c9" "15348febfa2266c4def59a08ef2846f6032c0797f001d7b9148f30ace0d08bcf" default)))
+ '(dired-auto-revert-buffer t)
  '(json-mode-auto-mode-list (quote (".babelrc" ".bowerrc")))
  '(mode-line-in-non-selected-windows t)
  '(package-selected-packages
