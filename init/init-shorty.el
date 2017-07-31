@@ -25,6 +25,25 @@
     (suppress-keymap map)
     map))
 
+
+(defvar hl-underline-on 0
+  "Tell whether to use an underline or a background for hl-line")
+
+(defun toggle-hl-underline ()
+  (interactive)
+  (if (eq hl-underline-on 1)
+    (progn
+      (setq hl-underline-on 0)
+      (message "hl underline off")
+      (custom-set-faces
+        '(hl-line ((t (:background "black"))))))
+    (progn
+      (setq hl-underline-on 1)
+      (message "hl underline on")
+      (custom-set-faces
+        '(hl-line ((t (:underline t))))))
+    ))
+
 (defun shorty-define-keys (map)
   ;; exit shorty-mode
   (define-key map (kbd "C-@") 'global-shorty-off)
@@ -88,6 +107,7 @@
 
   ;; hide/show
   (define-key map (kbd "h l") 'linum-mode)
+  (define-key map (kbd "h u") 'toggle-hl-underline)
   (define-key map (kbd "h w") 'whitespace-mode)
   (define-key map (kbd "h m") 'mode-line-terse)
   (define-key map (kbd "h n") 'mode-line-verbose)
