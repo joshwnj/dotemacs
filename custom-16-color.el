@@ -27,6 +27,8 @@
  '(magit-diff-removed ((t (:foreground "#aa2222"))))
  '(magit-diff-removed-highlight ((t (:foreground "#aa2222"))))
  '(magit-section-highlight ((t (:background "black"))))
+ '(markdown-bold-face ((t (:inherit bold))))
+ '(markdown-code-face ((t (:inherit fixed-pitch :foreground "magenta"))))
  '(markdown-header-face-1 ((t (:inherit markdown-header-face :foreground "green" :height 1.0))))
  '(markdown-header-face-3 ((t (:inherit markdown-header-face :foreground "magenta" :height 1.0))))
  '(mode-line ((t (:inverse-video nil :background "black"))))
@@ -53,11 +55,13 @@
     (quote
       ("a2dd771a05705be2a6e6adb6ddbc7a27ebf49edab1dffdbefe243096becba7c9" "15348febfa2266c4def59a08ef2846f6032c0797f001d7b9148f30ace0d08bcf" default)))
  '(dired-auto-revert-buffer t)
+ '(flycheck-javascript-standard-executable
+    "/Users/josh/projects/personal/drx/node_modules/.bin/standard")
  '(json-mode-auto-mode-list (quote (".babelrc" ".bowerrc")))
  '(mode-line-in-non-selected-windows t)
  '(package-selected-packages
     (quote
-      (eslint-fix flycheck-inline swiper isearch-symbol-at-point world-time-mode tuareg ghub+ docker dockerfile-mode flycheck-flow company-flow flow-minor-mode indium typescript-mode literal-string flow-mode flycheck ripgrep bshell rotate easy-kill yasnippet ioccur show-marks vkill vmd-mode yaml-mode company-tern backward-forward shift-number expand-region thing-cmds editorconfig flatui-theme json-mode osx-trash bool-flip indent-guide magit magit-gh-pulls white-theme markdown-mode web-mode popup ag company smex projectile undo-tree use-package)))
+      (import-js darkroom tabula-rasa lua-mode eslint-fix flycheck-inline swiper isearch-symbol-at-point world-time-mode tuareg ghub+ docker dockerfile-mode flycheck-flow company-flow flow-minor-mode indium typescript-mode literal-string flow-mode flycheck ripgrep bshell rotate easy-kill yasnippet ioccur show-marks vkill vmd-mode yaml-mode company-tern backward-forward shift-number expand-region thing-cmds editorconfig flatui-theme json-mode osx-trash bool-flip indent-guide magit magit-gh-pulls white-theme markdown-mode web-mode popup ag company smex projectile undo-tree use-package)))
  '(show-paren-mode t)
  '(whitespace-style
     (quote
